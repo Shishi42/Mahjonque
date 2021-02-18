@@ -14,4 +14,9 @@
     <string name="sept">Seven</string>
     <string name="huit">Eight</string>
     <string name="neuf">Nine</string>
+    <string name="background_image">Background image</string>
+    <string name="game_name">Mahjong</string>
+    <string name="button_play">Play</string>
+    <string name="button_options">Options</string>
+    <string name="button_quit">Quit</string>
 </resources>
