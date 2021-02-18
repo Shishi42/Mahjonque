@@ -1,23 +1,37 @@
 package Core;
 
+import com.example.mahjong.MainActivity;
 import com.example.mahjong.R;
 
 public enum NumTuile {
 
-    Un(R.string.un),
-    Deux(R.string.deux),
-    Trois(R.string.trois),
-    Quatre(R.string.quatre),
-    Cinq(R.string.cinq),
-    Six(R.string.six),
-    Sept(R.string.sept),
-    Huit(R.string.huit),
-    Neuf(R.string.neuf);
+    UN("One", 1),
+    DEUX("Two", 2),
+    TROIS("Three", 3),
+    QUATRE("Four", 4),
+    CINQ("Five", 5),
+    SIX("Six", 6),
+    SEPT("Seven", 7),
+    HUIT("Eight", 8),
+    NEUF("Nine", 9);
 
     private String nom;
+    private int num;
 
-    private NumTuile(String nom) {
+    private NumTuile(String nom, int num) {
+
         this.nom = nom;
+        this.num = num;
+
+    }
+
+    public int getNum() {
+        return this.num;
+    }
+
+    @Override
+    public String toString() {
+        return this.nom;
     }
 
 }
