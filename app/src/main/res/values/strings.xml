@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Mahjong</string>
+    <string name="bambou">Bamboo</string>
+    <string name="feu">Character</string>
+    <string name="piece">Circle</string>
+    <string name="dragon">Dragon</string>
+    <string name="vent">Wind</string>
+    <string name="un">One</string>
+    <string name="deux">Two</string>
+    <string name="trois">Three</string>
+    <string name="quatre">Four</string>
+    <string name="cinq">Five</string>
+    <string name="six">Six</string>
+    <string name="sept">Seven</string>
+    <string name="huit">Eight</string>
+    <string name="neuf">Nine</string>
+</resources>
