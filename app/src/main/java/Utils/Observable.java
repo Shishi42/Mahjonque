@@ -1,31 +1,28 @@
 
 package Utils;
 
-import java.util.List;
-import java.util.LinkedList;
-
 /**
- * Cette interface définit les comportements des objets qui peuvent être observé par d'autre
+ * This interface define the behaviour of observable object.
  * @author Salome Miha
  * @version 0.1
  */
 public interface Observable {
 
 	/**
-	 * Cette méthode permet d'ajouter un observateur
-	 * @param observateur L'observateur à ajouter
+	 * This method is used to add an observer to the notification list.
+	 * @param observer The observer to add
 	 */
-	public void attacheObservateur(Observateur observateur);
+	public void addObservateur(Observer observer);
 
 	/**
-	 * Cette méthode permet de retirer un observateur
-	 * @param observateur L'observateur à retirer
+	 * This method is used to remove an observer from the notification list.
+	 * @param observer The observer to remove
 	 */
-	public void detacheObservateur(Observateur observateur);
+	public void removeObservateur(Observer observer);
 
 	/**
-	 * Cette méthode permet de notifier tous les observateurs
+	 * This method is used to notify the observers from the notification list.
 	 */
-	public void notifieObservateurs();
+	public void notifyObservers();
 
 }

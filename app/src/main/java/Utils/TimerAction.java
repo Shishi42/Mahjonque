@@ -2,7 +2,7 @@
 package Utils;
 
 /**
- * Cette classe représente une action qui doit attendre avant de pouvoir être repeté
+ * This class represent an action that must wait before repeating herself
  */
 public class TimerAction {
 

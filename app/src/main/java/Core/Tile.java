@@ -5,42 +5,42 @@ import java.util.Optional;
 import java.util.Set;
 
 
-public class Tuile implements Comparable<Tuile> {
+public class Tile implements Comparable<Tile> {
 
-    private static Set<Tuile> tuiles = new LinkedHashSet<Tuile>();
+    private static Set<Tile> tiles = new LinkedHashSet<Tile>();
 
-    private TypeTuile type;
-    private NumTuile hauteur;
+    private TileType type;
+    private TileNum hauteur;
     private int num;
 
-    public static Tuile getTuile(TypeTuile type, NumTuile hauteur) {
+    public static Tile getTile(TileType type, TileNum hauteur) {
 
-        Tuile tuile;
+        Tile tile;
 
-        if(Tuile.tuiles.stream().
+        if(Tile.tiles.stream().
                 filter(t -> t.getType() == type && t.getHauteur() == hauteur).
                 count() < 4) {
 
-            tuile = new Tuile(type, hauteur);
+            tile = new Tile(type, hauteur);
 
         } else {
 
-            tuile = Tuile.tuiles.stream().
+            tile = Tile.tiles.stream().
                     filter(t -> t.getType() == type && t.getHauteur() == hauteur).
                     findFirst().
                     get();
         }
 
 
-        Tuile.tuiles.add(tuile);
+        Tile.tiles.add(tile);
 
-        return tuile;
+        return tile;
 
     }
 
-    public static Tuile getTuile(TypeTuile type, NumTuile hauteur, int num) throws IllegalArgumentException {
+    public static Tile getTile(TileType type, TileNum hauteur, int num) throws IllegalArgumentException {
 
-        Optional<Tuile> tuile = Tuile.tuiles.stream().
+        Optional<Tile> tuile = Tile.tiles.stream().
                 filter(t -> t.getType() == type && t.getHauteur() == hauteur && t.getNum() == num).
                 findFirst();
 
@@ -52,11 +52,11 @@ public class Tuile implements Comparable<Tuile> {
 
     }
 
-    private Tuile(TypeTuile type, NumTuile hauteur) {
+    private Tile(TileType type, TileNum hauteur) {
 
         this.type = type;
         this.hauteur = hauteur;
-        this.num = Tuile.tuiles.stream().
+        this.num = Tile.tiles.stream().
                 filter(t -> t.getType() == type && t.getHauteur() == hauteur).
                 mapToInt(t -> t.getNum()).
                 max().
@@ -64,11 +64,11 @@ public class Tuile implements Comparable<Tuile> {
 
     }
 
-    public TypeTuile getType() {
+    public TileType getType() {
         return this.type;
     }
 
-    public NumTuile getHauteur() {
+    public TileNum getHauteur() {
         return this.hauteur;
     }
 
@@ -77,12 +77,12 @@ public class Tuile implements Comparable<Tuile> {
     }
 
     @Override
-    public int compareTo(Tuile tuile) {
+    public int compareTo(Tile tile) {
 
         int ret = 0;
-        ret = this.getType().compareTo(tuile.getType());
-        if(ret == 0) ret = this.getHauteur().compareTo(tuile.getHauteur());
-        if(ret == 0) ret = this.getNum() - tuile.getNum();
+        ret = this.getType().compareTo(tile.getType());
+        if(ret == 0) ret = this.getHauteur().compareTo(tile.getHauteur());
+        if(ret == 0) ret = this.getNum() - tile.getNum();
 
         return ret;
 

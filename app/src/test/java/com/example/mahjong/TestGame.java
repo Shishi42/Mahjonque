@@ -2,21 +2,18 @@ package com.example.mahjong;
 
 import org.junit.Test;
 
-import Core.Jeu;
-import Core.NumTuile;
-import Core.Tuile;
-import Core.TypeTuile;
+import Core.Game;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-public class TestJeu {
+public class TestGame {
     @Test
     public void initPioche_is_correct() {
 
-        Jeu jeu = new Jeu();
+        Game game = new Game();
 
-        assertEquals(136, jeu.getTaillePioche());
+        assertEquals(136, game.getTaillePioche());
 
     }
 

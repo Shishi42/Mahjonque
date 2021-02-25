@@ -2,6 +2,7 @@ package com.example.mahjong;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,7 +22,7 @@ public class PlayMahjong extends AppCompatActivity {
 
         // Set No Title
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         this.setContentView(new GameSurface(this));
 
     }

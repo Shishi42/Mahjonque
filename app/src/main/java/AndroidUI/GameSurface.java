@@ -8,15 +8,20 @@ import android.view.SurfaceView;
 
 import com.example.mahjong.R;
 
-import Core.NumTuile;
-import Core.Tuile;
-import Core.TypeTuile;
-import CoreUI.TuileUI;
+import java.util.LinkedList;
+import java.util.List;
+
+import Core.Game;
+import Core.Player;
+import Core.TileNum;
+import Core.Tile;
+import Core.TileType;
+import CoreUI.TileUI;
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private GameThread gameThread;
-    private TuileUI tuileUI;
+    private List<TileUI> tilesUI;
 
     public GameSurface(Context context)  {
         super(context);
@@ -24,30 +29,45 @@ public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
         // Make Game Surface focusable so it can handle events. .
         this.setFocusable(true);
 
-        // Sét callback.
+        // Set callback.
         this.getHolder().addCallback(this);
+
     }
 
     public void update()  {
-        this.tuileUI.update();
+
+        this.tilesUI.forEach(t -> t.update());
+
     }
 
     @Override
     public void draw(Canvas canvas)  {
-        super.draw(canvas);
 
-        this.tuileUI.draw(canvas);
+        super.draw(canvas);
+        this.tilesUI.forEach(t -> t.draw(canvas));
+
     }
 
     // Implements method of SurfaceHolder.Callback
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        Bitmap tuileBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.test_tuile);
-        this.tuileUI = new TuileUI(tuileBitmap,100,100,50, 50, Tuile.getTuile(TypeTuile.BAMBOU, NumTuile.DEUX));
 
-        this.gameThread = new GameThread(this,holder);
+        Game game = new Game();
+        Player player = new Player(game);
+        this.tilesUI = new LinkedList<TileUI>();
+        int i = 0;
+        for(Tile tile : player.getMain().getTiles()) {
+            i+=1;
+            this.tilesUI.add(new TileUI(this.getResources(), i * 700, 0, tile));
+        }
+/*
+        this.tilesUI.add(new TileUI(this.getResources(),0,0, Tile.getTile(TileType.BAMBOU, TileNum.ONE)));
+        this.tilesUI.add(new TileUI(this.getResources(),700,0, Tile.getTile(TileType.FEU, TileNum.THREE)));
+*/
+        this.gameThread = new GameThread(this, holder);
         this.gameThread.setRunning(true);
         this.gameThread.start();
+
     }
 
     // Implements method of SurfaceHolder.Callback

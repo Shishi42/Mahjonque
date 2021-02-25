@@ -18,8 +18,8 @@ public class GameThread extends Thread {
     public void run()  {
         long startTime = System.nanoTime();
 
-        while(running)  {
-            Canvas canvas= null;
+        while(this.running)  {
+            Canvas canvas = null;
             try {
                 // Get Canvas from Holder and lock it.
                 canvas = this.surfaceHolder.lockCanvas();
@@ -32,17 +32,18 @@ public class GameThread extends Thread {
             }catch(Exception e)  {
                 // Do nothing.
             } finally {
-                if(canvas!= null)  {
+                if(canvas != null)  {
                     // Unlock Canvas.
                     this.surfaceHolder.unlockCanvasAndPost(canvas);
                 }
             }
+
             long now = System.nanoTime() ;
             // Interval to redraw game
             // (Change nanoseconds to milliseconds)
             long waitTime = (now - startTime)/1000000;
             if(waitTime < 10)  {
-                waitTime= 10; // Millisecond.
+                waitTime = 10; // Millisecond.
             }
             System.out.print(" Wait Time="+ waitTime);
 

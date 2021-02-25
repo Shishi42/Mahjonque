@@ -2,7 +2,7 @@
 package Utils;
 
 /**
- * Cette interface fonctionnelle représente une opération qui ne prend pas de paramètres et ne retourne rien
+ * This functional interface represent a method with no parameters and no return.
  * @author Salome Miha
  * @version 0.1
  */
@@ -10,14 +10,14 @@ package Utils;
 public interface Procedure {
 
 	/**
-	 * L'opération à définir
+	 * The method to define
 	 */
 	public void run();
 
 	/**
-	 * Cette méthode permet permet d'enchainer les appels de procédure
-	 * @param next La Procedure à appeler après
-	 * @return La Procedure qui enchaine les deux Procedure
+	 * This method allow us to chain the procedure call.
+	 * @param next The procedure to call next.
+	 * @return A Procedure containing the two procedure.
 	 */
 	public default Procedure andThen(Procedure next) {
 
