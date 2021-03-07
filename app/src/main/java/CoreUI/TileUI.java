@@ -8,8 +8,9 @@ import android.graphics.Canvas;
 import com.example.mahjong.R;
 
 import Core.Tile;
+import Utils.Panel;
 
-public class TileUI {
+public class TileUI extends Panel {
 
     private final int WIDTH;
     private final int HEIGHT;
@@ -48,11 +49,10 @@ public class TileUI {
         this.width = this.WIDTH / colCount;
         this.height = this.HEIGHT / rowCount;
 
-        this.image = this.getBitmap();
-
     }
 
-    private Bitmap getBitmap() {
+    @Override
+    public Bitmap getBitmap() {
 
         int row = this.tile.getType().getNum();
         int col = this.tile.getHauteur().getNum();
@@ -62,12 +62,15 @@ public class TileUI {
 
     }
 
-    public void update()  {
+    @Override
+    public int getX() {
+        return x;
     }
 
-    public void draw(Canvas canvas)  {
-        Bitmap bitmap = this.image;
-        canvas.drawBitmap(bitmap, x, y, null);
+    @Override
+    public int getY() {
+        return y;
     }
+
 
 }

@@ -9,7 +9,7 @@ import android.view.WindowManager;
 
 import AndroidUI.GameSurface;
 
-public class PlayMahjong extends AppCompatActivity {
+public class PlayBoardGame extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

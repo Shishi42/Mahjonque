@@ -16,12 +16,13 @@ import Core.Player;
 import Core.TileNum;
 import Core.Tile;
 import Core.TileType;
+import CoreUI.GameUI;
 import CoreUI.TileUI;
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private GameThread gameThread;
-    private List<TileUI> tilesUI;
+    private GameUI gameUI;
 
     public GameSurface(Context context)  {
         super(context);
@@ -36,15 +37,14 @@ public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     public void update()  {
 
-        this.tilesUI.forEach(t -> t.update());
-
     }
 
     @Override
     public void draw(Canvas canvas)  {
 
         super.draw(canvas);
-        this.tilesUI.forEach(t -> t.draw(canvas));
+       // this.gameUI.draw(canvas);
+
 
     }
 
@@ -52,18 +52,12 @@ public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
 
-        Game game = new Game();
-        Player player = new Player(game);
-        this.tilesUI = new LinkedList<TileUI>();
-        int i = 0;
-        for(Tile tile : player.getMain().getTiles()) {
-            i+=1;
-            this.tilesUI.add(new TileUI(this.getResources(), i * 700, 0, tile));
-        }
-/*
-        this.tilesUI.add(new TileUI(this.getResources(),0,0, Tile.getTile(TileType.BAMBOU, TileNum.ONE)));
-        this.tilesUI.add(new TileUI(this.getResources(),700,0, Tile.getTile(TileType.FEU, TileNum.THREE)));
-*/
+      //  Game game = new Game();
+
+       // game.init();
+
+      //  this.gameUI = new GameUI(this.getResources(), game);
+
         this.gameThread = new GameThread(this, holder);
         this.gameThread.setRunning(true);
         this.gameThread.start();
