@@ -2,7 +2,7 @@ package com.example.mahjong;
 
 import org.junit.Test;
 
-import Core.Game;
+import Core.BoardGame;
 import Core.Player;
 
 import static org.junit.Assert.assertEquals;
@@ -11,31 +11,31 @@ public class TestTileHand {
 
     @Test
     public void initMain_is_correct() {
+/*
+        BoardGame boardGame = new BoardGame();
+        assertEquals(136, boardGame.getTaillePioche());
 
-        Game game = new Game();
-        assertEquals(136, game.getTaillePioche());
 
-
-        Player player = new Player(game);
+        Player player = new Player(boardGame);
 
         System.out.println(player.getMain());
 
         assertEquals(14, player.getMain().getTaille());
-        assertEquals(122, game.getTaillePioche());
+        assertEquals(122, boardGame.getTaillePioche());
 
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
-        player = new Player(game);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
+        player = new Player(boardGame);
 
-        assertEquals(10, game.getTaillePioche());
+        assertEquals(10, boardGame.getTaillePioche());
 
-        player = new Player(game);
-
+        player = new Player(boardGame);
+*/
 
     }
 

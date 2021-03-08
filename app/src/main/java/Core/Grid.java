@@ -80,7 +80,7 @@ public class Grid {
     /**
      * This method is used to reset the entire board
      */
-    protected void resetBoard() {
+    public void resetBoard() {
         for (int i = 0; i < NB_ROW; i++) {
             for (int j = 0; j < NB_COL; j++) {
                 cells[i][j].setJoueur("");

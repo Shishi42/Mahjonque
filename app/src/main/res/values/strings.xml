@@ -1,19 +1,5 @@
 <resources>
     <string name="app_name">Mahjong</string>
-    <string name="bambou">Bamboo</string>
-    <string name="feu">Character</string>
-    <string name="piece">Circle</string>
-    <string name="dragon">Dragon</string>
-    <string name="vent">Wind</string>
-    <string name="un">One</string>
-    <string name="deux">Two</string>
-    <string name="trois">Three</string>
-    <string name="quatre">Four</string>
-    <string name="cinq">Five</string>
-    <string name="six">Six</string>
-    <string name="sept">Seven</string>
-    <string name="huit">Eight</string>
-    <string name="neuf">Nine</string>
     <string name="background_image">Background image</string>
     <string name="game_name">Mahjong</string>
     <string name="button_play">Play</string>
@@ -26,4 +12,12 @@
     <string name="default_length">8</string>
     <string name="default_thinking">30</string>
     <string name="blank"> </string>
+    <string name="player1">Player1</string>
+    <string name="player2">Player2</string>
+    <string name="player1Wins">Player1 Wins !</string>
+    <string name="player2Wins">Player2 Wins !</string>
+    <string name="draw">Draw!</string>
+    <string name="reset">Reset Game</string>
+    <string name="retry">Retry</string>
+    <string name="drawCard">Draw</string>
 </resources>

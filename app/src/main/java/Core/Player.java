@@ -2,12 +2,12 @@ package Core;
 
 public class Player {
 
-    private Game game;
+    private BoardGame boardGame;
 
 
-    public Player(Game game) {
+    public Player(BoardGame boardGame) {
 
-        this.game = game;
+        this.boardGame = boardGame;
 
 
     }

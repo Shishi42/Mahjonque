@@ -3,9 +3,9 @@ package Core;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Puissance4 extends Game {
+public class ConnectFour extends BoardGame {
 
-    public Puissance4() {
+    public ConnectFour() {
         super(6, 7);
 
     }

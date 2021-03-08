@@ -1,23 +1,20 @@
 package CoreUI;
 
-        import android.content.res.Resources;
+        import com.example.mahjong.MainActivityBoardGame;
 
-        import com.example.mahjong.MainActivity;
-        import com.example.mahjong.R;
-
-        import Core.Game;
+        import Core.BoardGame;
 
 
 public class GameUI {
 
 
-    private Game game;
-    private MainActivity controller;
+    private BoardGame boardGame;
+    private MainActivityBoardGame controller;
 
 
-    public GameUI(Game game, MainActivity controller)  {
+    public GameUI(BoardGame boardGame, MainActivityBoardGame controller)  {
 
-        this.game = game;
+        this.boardGame = boardGame;
         this.controller = controller;
 
     }

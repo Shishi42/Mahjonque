@@ -1,19 +1,25 @@
 package Controller;
 
-import Core.Game;
+import com.example.mahjong.MainActivityBoardGame;
+
+import Core.BoardGame;
 
 public class TicTacToeController extends GameController {
 
-    public TicTacToeController(Game game) {
-        super(game);
+    public TicTacToeController(BoardGame boardGame, MainActivityBoardGame view) {
+        super(boardGame, view);
     }
 
     @Override
     public void clickGrid(int row, int col) {
 
-        if(this.game.getGrid().getCase(row, col).getJoueur() == "") {
+        if(this.boardGame.ended()) {
+            return;
+        }
 
-            this.game.getGrid().getCase(row, col).setJoueur("X");
+        if(this.boardGame.getGrid().getCase(row, col).getJoueur() == "") {
+
+            this.boardGame.getGrid().getCase(row, col).setJoueur("X");
             this.update();
 
         }

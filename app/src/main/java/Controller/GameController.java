@@ -1,51 +1,89 @@
 package Controller;
 
+import com.example.mahjong.MainActivityBoardGame;
+
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import Core.Cell;
-import Core.Game;
+import Core.BoardGame;
 
 public abstract class GameController {
 
-    protected Game game;
+    protected BoardGame boardGame;
+    protected MainActivityBoardGame view;
 
-    public GameController(Game game) {
-        this.game = game;
+    public GameController(BoardGame boardGame, MainActivityBoardGame view) {
+
+        this.boardGame = boardGame;
+        this.view = view;
+
     }
 
     public void clickGrid(int row, int col) {
 
-        this.game.getGrid().getCase(row, col).setJoueur("X");
+        this.boardGame.getGrid().getCase(row, col).setJoueur("X");
         this.update();
 
     }
 
     public void clickReset() {
-        this.game.resetGame();
+        this.boardGame.resetGame();
+    }
+    public void clickRetry() {
+        this.boardGame.getGrid().resetBoard();
     }
 
 
     public void update() {
 
-        if(this.game.checkForWin('X')) {
-            this.game.player1Wins();
+        boolean reset = false;
+
+        this.view.update();
+
+        if(this.boardGame.checkForWin('X')) {
+
+            this.boardGame.player1Wins();
+            this.view.player1Wins();
+
         } else {
-            List<Cell> cells = this.game.getCasesAvailable();
+
+            List<Cell> cells = this.boardGame.getCasesAvailable();
 
             if(cells.size() > 0) {
-                this.game.getCasesAvailable().get(new Random().nextInt(this.game.getCasesAvailable().size())).setJoueur("O");
-                if(this.game.checkForWin('O')) {
-                    this.game.player2Wins();
-                    if (this.game.getCasesAvailable().size() == 0) {
-                        this.game.draw();
+
+                try {
+                    this.getPlay().setJoueur("O");
+                } catch (NoSuchElementException e) {
+
+                    this.boardGame.draw();
+                    this.view.draw();
+
+                }
+
+                if(this.boardGame.checkForWin('O')) {
+
+                    this.boardGame.player2Wins();
+                    this.view.player2Wins();
+
+                    if (this.boardGame.getCasesAvailable().size() == 0) {
+
+                        this.boardGame.draw();
+                        this.view.draw();
+
                     }
                 }
             } else {
-                this.game.draw();
+                this.boardGame.draw();
             }
 
         }
 
     }
+
+    public Cell getPlay() {
+        return this.boardGame.getCasesAvailable().get(new Random().nextInt(this.boardGame.getCasesAvailable().size()));
+    }
+
 }

@@ -1,23 +1,10 @@
 package AndroidUI;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.example.mahjong.R;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import Core.Game;
-import Core.Player;
-import Core.TileNum;
-import Core.Tile;
-import Core.TileType;
 import CoreUI.GameUI;
-import CoreUI.TileUI;
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 

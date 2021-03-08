@@ -8,20 +8,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-
 import Controller.GameController;
-import Core.Game;
+import Core.BoardGame;
 
 /**
  * This class represent an abstract 2 players board game
  */
-public abstract class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
 
-    protected Game game;
+    protected BoardGame boardGame;
     protected GameController controller;
 
     protected Button[][] buttons;
@@ -36,10 +31,10 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
 
-        this.buttons = new Button[this.game.getGrid().getNbRow()][this.game.getGrid().getNbCol()];
+        this.buttons = new Button[this.boardGame.getGrid().getNbRow()][this.boardGame.getGrid().getNbCol()];
 
-        for (int i = 0; i < this.game.getGrid().getNbRow(); i++) {
-            for (int j = 0; j < this.game.getGrid().getNbCol(); j++) {
+        for (int i = 0; i < this.boardGame.getGrid().getNbRow(); i++) {
+            for (int j = 0; j < this.boardGame.getGrid().getNbCol(); j++) {
                 String buttonID = "button_" + i + j;
                 int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
                 buttons[i][j] = findViewById(resID);
@@ -49,10 +44,20 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
 
 
         Button buttonReset = findViewById(R.id.button_reset);
-     /*   buttonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { this.clickReset(); }
-        });*/
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                clickReset();
+            }
+        });
+
+        Button buttonRetry = findViewById(R.id.button_retry);
+        buttonRetry.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                clickRetry();
+            }
+        });
+
+        this.update();
 
     }
 
@@ -73,6 +78,13 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
 
     }
 
+    private void clickRetry() {
+
+        this.controller.clickRetry();
+        this.update();
+
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -84,28 +96,30 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
 
     public void update() {
 
-        for (int i = 0; i < this.game.getGrid().getNbRow(); i++) {
-            for (int j = 0; j < this.game.getGrid().getNbCol(); j++) {
-                buttons[i][j].setText(this.game.getGrid().getCase(i, j).getJoueur());
+        System.out.println("update");
+
+        for (int i = 0; i < this.boardGame.getGrid().getNbRow(); i++) {
+            for (int j = 0; j < this.boardGame.getGrid().getNbCol(); j++) {
+                buttons[i][j].setText(this.boardGame.getGrid().getCase(i, j).getJoueur());
             }
         }
 
-        this.textViewPlayer1.setText("Player 1: " + String.valueOf(this.game.getPlayer1Points()));
-        this.textViewPlayer2.setText("Player 2: " + String.valueOf(this.game.getPlayer2Points()));
+        this.textViewPlayer1.setText(getString(R.string.player1) + " : " + String.valueOf(this.boardGame.getPlayer1Points()));
+        this.textViewPlayer2.setText(getString(R.string.player2) + " : " + String.valueOf(this.boardGame.getPlayer2Points()));
 
     }
 
 
     public void player1Wins() {
-        Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.player1Wins), Toast.LENGTH_SHORT).show();
     }
 
     public void player2Wins() {
-        Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.player2Wins), Toast.LENGTH_SHORT).show();
     }
 
     public void draw() {
-        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.draw), Toast.LENGTH_SHORT).show();
     }
 
 

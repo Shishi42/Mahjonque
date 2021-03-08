@@ -3,7 +3,7 @@ package Core;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class TicTacToe extends Game {
+public class TicTacToe extends BoardGame {
 
     public TicTacToe() {
         super(3, 3);
