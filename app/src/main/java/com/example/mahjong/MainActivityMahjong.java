@@ -18,6 +18,7 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
 
     protected ImageView[] images;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 

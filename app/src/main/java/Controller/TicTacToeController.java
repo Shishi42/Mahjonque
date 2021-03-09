@@ -4,6 +4,9 @@ import com.example.mahjong.MainActivityBoardGame;
 
 import Core.BoardGame;
 
+/**
+ * This class represent a controller for Tic Tac Toe game
+ */
 public class TicTacToeController extends GameController {
 
     public TicTacToeController(BoardGame boardGame, MainActivityBoardGame view) {

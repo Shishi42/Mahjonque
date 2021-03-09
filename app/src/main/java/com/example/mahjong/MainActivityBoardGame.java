@@ -12,7 +12,7 @@ import Controller.GameController;
 import Core.BoardGame;
 
 /**
- * This class represent an abstract 2 players board game
+ * This class represent an abstract view for a board game
  */
 public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,7 +24,7 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
     protected TextView textViewPlayer1;
     protected TextView textViewPlayer2;
 
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -62,11 +62,21 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
     }
 
 
-
+    /**
+     * This method return the row of a given Button
+     * @param id Le id of the button
+     * @return The row's number of the button
+     */
     public int getRow(int id) {
         return Integer.parseInt(getResources().getResourceEntryName(id).split("_")[1].substring(0,1));
     }
 
+
+    /**
+     * This method return the column of a given Button
+     * @param id Le id of the button
+     * @return The column's number of the button
+     */
     public int getCol(int id) {
         return Integer.parseInt(getResources().getResourceEntryName(id).split("_")[1].substring(1,2));
     }
@@ -94,6 +104,10 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
 
     }
 
+    /**
+     * This method update the view.
+     * It take the info needed in the model to update the view
+     */
     public void update() {
 
         System.out.println("update");
@@ -110,36 +124,27 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
     }
 
 
+    /**
+     * This method show a pop up saying that the player1 has wined
+     */
     public void player1Wins() {
         Toast.makeText(this, getString(R.string.player1Wins), Toast.LENGTH_SHORT).show();
     }
 
+
+    /**
+     * This method show a pop up saying that the player2 has wined
+     */
     public void player2Wins() {
         Toast.makeText(this, getString(R.string.player2Wins), Toast.LENGTH_SHORT).show();
     }
 
+
+    /**
+     * This method show a pop up saying that the game is a draw
+     */
     public void draw() {
         Toast.makeText(this, getString(R.string.draw), Toast.LENGTH_SHORT).show();
     }
-
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-/*
-        outState.putInt("player1Points", player1Points);
-        outState.putInt("player2Points", player2Points);
-        outState.putBoolean("player1Turn", player1Turn);*/
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-/*
-        player1Points = savedInstanceState.getInt("player1Points");
-        player2Points = savedInstanceState.getInt("player2Points");
-        player1Turn = savedInstanceState.getBoolean("player1Turn");*/
-    }
-
 
 }

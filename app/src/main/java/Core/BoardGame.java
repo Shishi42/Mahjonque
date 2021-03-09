@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * This class represent an abstract model for a board game
+ */
 public abstract class BoardGame {
 
     protected Grid grid;
@@ -13,7 +16,11 @@ public abstract class BoardGame {
 
     protected boolean winner;
 
-
+    /**
+     * This constructor initialize the general info for a board game
+     * @param nbRow The number of row of the board
+     * @param nbCol The number of column of the board
+     */
     public BoardGame(int nbRow, int nbCol) {
 
         this.grid = new Grid(nbRow, nbCol);
@@ -37,21 +44,36 @@ public abstract class BoardGame {
 
     }
 
+
+    /**
+     * This method return the Grid of the board game
+     * @return The grid of the game
+     */
     public Grid getGrid() {
         return this.grid;
     }
 
+
+    /**
+     * This method return the number of point of the player1
+     * @return The number of point
+     */
     public int getPlayer1Points() {
         return this.player1Points;
     }
 
+
+    /**
+     * This method return the number of point of the player2
+     * @return The number of point
+     */
     public int getPlayer2Points() {
         return this.player2Points;
     }
 
 
     /**
-     * This method is used to reset the game
+     * This method reset the game
      */
     public void resetGame() {
 
@@ -62,22 +84,43 @@ public abstract class BoardGame {
     }
 
 
+    /**
+     * This method increments the points of the player1
+     */
     public void player1Wins() {
         player1Points++;
     }
 
+
+    /**
+     * This method increments the points of the player2
+     */
     public void player2Wins() {
         player2Points++;
     }
 
+    /**
+     * This method does nothing
+     * Nothing happen in the model when there is a draw
+     */
     public void draw() {
-        this.grid.resetBoard();
+
     }
 
+
+    /**
+     * This method a boolean to tell if a player have wined
+     * @return true if one of the players have wined, false otherwise
+     */
     public boolean ended() {
         return this.checkForWin('X') || this.checkForWin('O');
     }
 
+
+    /**
+     * This method return the column where we can still play
+     * @return The list of the available column numbers
+     */
     public List<Integer> getColumnAvailable() {
 
         List<Integer> ret = new LinkedList<Integer>();
@@ -93,7 +136,13 @@ public abstract class BoardGame {
     }
 
 
-
+    /**
+     * This method return a boolean to tell if a string contain a repetition of a letter a given number of time
+     * @param str The string to look at
+     * @param car The letter to look up for
+     * @param rep The minimum number of repetition
+     * @return true if the str contain a repetition of the letter car at least rep times, false otherwise
+     */
     public boolean repeatingMoreThan(String str, char car, int rep) {
 
         int n = str.length();
