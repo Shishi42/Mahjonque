@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -14,17 +15,12 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <TextView
-    android:id="@+id/text_game_name"
-    android:layout_width="wrap_content"
-    android:layout_height="0dp"
-    android:paddingTop="50dp"
-    android:text="@string/game_name"
-    android:textColor="#FFFFFF"
-    android:textSize="64sp"
-    android:textStyle="bold"
-    tools:text="@string/game_name"
-    android:layout_weight="3"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/logov2"
+        android:layout_weight="4"/>
 
     <Button
     android:id="@+id/button_play"
@@ -47,5 +43,5 @@
     android:text="@string/button_quit"
     android:layout_weight="1"/>
 
-    </LinearLayout>
+</LinearLayout>
 </RelativeLayout>
