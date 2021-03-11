@@ -16,6 +16,7 @@
     <string name="neuf">Nine</string>
 
     <string name="background_image">Background image</string>
+    <string name="logo_image">Logo image</string>
     <string name="game_name">Mahjong</string>
     <string name="button_play">Play</string>
     <string name="button_options">Options</string>
