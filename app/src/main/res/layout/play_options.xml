@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
 
     <ImageView
         android:id="@+id/background_img"
@@ -26,15 +26,15 @@
         android:layout_marginTop="80dp"
         android:autofillHints="8"
         android:ems="10"
-        android:hint="@string/blank"
+        android:gravity="center"
+        android:hint="@string/hint_length"
         android:inputType="number"
         android:text="@string/default_length"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background_img"
-        android:gravity="center"/>
+        app:layout_constraintTop_toTopOf="@+id/background_img" />
 
     <EditText
         android:id="@+id/input_thinking"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="@string/hint_length"
+        android:text="@string/text_length"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/input_length"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="@string/hint_thinking"
+        android:text="@string/text_thinking"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/input_thinking"
         app:layout_constraintEnd_toEndOf="parent"

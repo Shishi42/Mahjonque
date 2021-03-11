@@ -14,6 +14,7 @@
     <string name="sept">Seven</string>
     <string name="huit">Eight</string>
     <string name="neuf">Nine</string>
+
     <string name="background_image">Background image</string>
     <string name="game_name">Mahjong</string>
     <string name="button_play">Play</string>
@@ -21,8 +22,12 @@
     <string name="button_quit">Quit</string>
     <string name="button_confirm">Confirm</string>
     <string name="button_back">Back</string>
-    <string name="hint_length">Game Length :</string>
-    <string name="hint_thinking">Thinking Time :</string>
+    <string name="text_length">Game Length :</string>
+    <string name="text_thinking">Thinking Time :</string>
+
+    <string name="hint_length">(default : 8)</string>
+    <string name="hint_thinking">(default : 30)</string>
+
     <string name="default_length">8</string>
     <string name="default_thinking">30</string>
     <string name="blank"> </string>
