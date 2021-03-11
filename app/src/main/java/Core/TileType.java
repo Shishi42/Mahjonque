@@ -2,11 +2,11 @@ package Core;
 
 public enum TileType {
 
-    BAMBOU("Bamboo", 2),
-    FEU("Character", 0),
-    PIECE("Circle", 1),
-    VENT("Wind", 3),
-    DRAGON("Dragon", 3);
+    BAMBOO("bamboo", 2),
+    CHARACTER("character", 0),
+    CIRCLE("circle", 1),
+    WIND("wind", 3),
+    DRAGON("dragon", 3);
 
     private int num;
     private String name;

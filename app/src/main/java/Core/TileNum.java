@@ -2,15 +2,15 @@ package Core;
 
 public enum TileNum {
 
-    ONE("One", 0),
-    TWO("Two", 1),
-    THREE("Three", 2),
-    FOUR("Four", 3),
-    FIVE("Five", 4),
-    SIX("Six", 5),
-    SEVEN("Seven", 6),
-    EIGHT("Eight", 7),
-    NINE("Nine", 8);
+    ONE("one", 0),
+    TWO("two", 1),
+    THREE("three", 2),
+    FOUR("four", 3),
+    FIVE("five", 4),
+    SIX("six", 5),
+    SEVEN("seven", 6),
+    EIGHT("eight", 7),
+    NINE("nine", 8);
 
     private String name;
     private int num;

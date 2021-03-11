@@ -40,15 +40,15 @@ public class Tile implements Comparable<Tile> {
 
     public static Tile getTile(TileType type, TileNum hauteur, int num) throws IllegalArgumentException {
 
-        Optional<Tile> tuile = Tile.tiles.stream().
+        Optional<Tile> tile = Tile.tiles.stream().
                 filter(t -> t.getType() == type && t.getHauteur() == hauteur && t.getNum() == num).
                 findFirst();
 
-        if(!tuile.isPresent()) {
+        if(!tile.isPresent()) {
             throw new IllegalArgumentException();
         }
 
-        return tuile.get();
+        return tile.get();
 
     }
 
@@ -82,7 +82,7 @@ public class Tile implements Comparable<Tile> {
         int ret = 0;
         ret = this.getType().compareTo(tile.getType());
         if(ret == 0) ret = this.getHauteur().compareTo(tile.getHauteur());
-        if(ret == 0) ret = this.getNum() - tile.getNum();
+      //  if(ret == 0) ret = this.getNum() - tile.getNum();
 
         return ret;
 
