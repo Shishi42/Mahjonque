@@ -1,22 +1,15 @@
 package AndroidUI;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.example.mahjong.R;
-
-import Core.NumTuile;
-import Core.Tuile;
-import Core.TypeTuile;
-import CoreUI.TuileUI;
+import CoreUI.GameUI;
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private GameThread gameThread;
-    private TuileUI tuileUI;
+    private GameUI gameUI;
 
     public GameSurface(Context context)  {
         super(context);
@@ -24,30 +17,38 @@ public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
         // Make Game Surface focusable so it can handle events. .
         this.setFocusable(true);
 
-        // Sét callback.
+        // Set callback.
         this.getHolder().addCallback(this);
+
     }
 
     public void update()  {
-        this.tuileUI.update();
+
     }
 
     @Override
     public void draw(Canvas canvas)  {
-        super.draw(canvas);
 
-        this.tuileUI.draw(canvas);
+        super.draw(canvas);
+       // this.gameUI.draw(canvas);
+
+
     }
 
     // Implements method of SurfaceHolder.Callback
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        Bitmap tuileBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.test_tuile);
-        this.tuileUI = new TuileUI(tuileBitmap,100,100,50, 50, Tuile.getTuile(TypeTuile.BAMBOU, NumTuile.DEUX));
 
-        this.gameThread = new GameThread(this,holder);
+      //  Game game = new Game();
+
+       // game.init();
+
+      //  this.gameUI = new GameUI(this.getResources(), game);
+
+        this.gameThread = new GameThread(this, holder);
         this.gameThread.setRunning(true);
         this.gameThread.start();
+
     }
 
     // Implements method of SurfaceHolder.Callback

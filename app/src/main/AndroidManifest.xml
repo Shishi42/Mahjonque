@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:screenOrientation="landscape"
         android:theme="@style/Theme.Mahjong">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".PlayMahjong">
+
+        <activity android:name=".MainActivityConnectFour"></activity>
+        <activity android:name=".MainActivityTicTacToe"></activity>
+        <activity android:name=".MainActivityMahjong"
+            android:screenOrientation="landscape">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

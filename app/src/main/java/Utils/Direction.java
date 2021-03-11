@@ -2,7 +2,7 @@
 package Utils;
 
 /**
- * Cette énumération présente les direction cardinales
+ * This enumeration represent the cardinal directions.
  */
 public enum Direction {
   NORTH("North"),
@@ -18,10 +18,10 @@ public enum Direction {
 
 
   /**
-   * Cette méthode permet de récupérer la dirction en fonction d'un vecteur de déplacement
-   * @param x La composante en abscisse du vecteur de déplacement
-   * @param y La composante en ordonnée du vecteur de déplacement
-   * @return La direction
+   * This method is used to get the direction from a vector.
+   * @param x The x-axis number of the vector
+   * @param y The y-axis number of the vector
+   * @return The calculated direction
    */
   public static Direction getDirection(double x, double y) {
 

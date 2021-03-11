@@ -31,4 +31,12 @@
     <string name="default_length">8</string>
     <string name="default_thinking">30</string>
     <string name="blank"> </string>
+    <string name="player1">Player1</string>
+    <string name="player2">Player2</string>
+    <string name="player1Wins">Player1 Wins !</string>
+    <string name="player2Wins">Player2 Wins !</string>
+    <string name="draw">Draw!</string>
+    <string name="reset">Reset Game</string>
+    <string name="retry">Retry</string>
+    <string name="drawCard">Draw</string>
 </resources>
