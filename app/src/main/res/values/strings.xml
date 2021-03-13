@@ -40,4 +40,5 @@
     <string name="reset">Reset Game</string>
     <string name="retry">Retry</string>
     <string name="drawCard">Draw</string>
+    <string name="descriptionImage">Image Hand</string>
 </resources>

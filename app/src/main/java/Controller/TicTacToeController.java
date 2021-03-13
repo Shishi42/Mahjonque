@@ -4,8 +4,12 @@ import com.example.mahjong.MainActivityBoardGame;
 
 import Core.BoardGame;
 
+
+
 /**
  * This class represent a controller for Tic Tac Toe game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public class TicTacToeController extends GameController {
 
@@ -20,9 +24,9 @@ public class TicTacToeController extends GameController {
             return;
         }
 
-        if(this.boardGame.getGrid().getCase(row, col).getJoueur() == "") {
+        if(this.boardGame.getGrid().getCell(row, col).getLetter().equals("")) {
 
-            this.boardGame.getGrid().getCase(row, col).setJoueur("X");
+            this.boardGame.getGrid().getCell(row, col).setLetter("X");
             this.update();
 
         }

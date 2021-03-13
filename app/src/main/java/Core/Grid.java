@@ -1,17 +1,24 @@
 package Core;
 
-import android.widget.Button;
-
 import androidx.annotation.NonNull;
 
+/**
+ * This class represent a grid for that can be used for a board game
+ * @author Mano Brabant
+ * @version 1.0
+ */
 public class Grid {
-
 
     private final int NB_ROW;
     private final int NB_COL;
-    private Cell[][] cells;
+    private final Cell[][] cells;
 
 
+    /**
+     * This constructor create a new grid
+     * @param nbRow The number of row of the new grid
+     * @param nbCol The number of column of the new grid
+     */
     public Grid(int nbRow, int nbCol) {
 
         this.NB_ROW = nbRow;
@@ -29,27 +36,49 @@ public class Grid {
 
     }
 
+
+    /**
+     * This method return the number of row of the grid
+     * @return The number of row
+     */
     public int getNbRow() {
         return this.NB_ROW;
     }
 
+
+    /**
+     * This method return the number of column of the grid
+     * @return The number of column
+     */
     public int getNbCol() {
         return this.NB_COL;
     }
 
-    public Cell getCase(int row, int col) {
+
+    /**
+     * This method return a cell of the grid
+     * @param row The row of the cell
+     * @param col The column of the cell
+     * @return The cell at the given row and column
+     */
+    public Cell getCell(int row, int col) {
         return this.cells[row][col];
     }
 
+
+    /**
+     * This method return the cells of the grid
+     * @return The cells of the grid
+     */
     public Cell[][] getCells() {
         return this.cells;
     }
 
 
     /**
-     * This method is used to get every button of a given row
+     * This method is used to get every cell of a given row
      * @param row The row to return
-     * @return Every button of the given row
+     * @return Every cell of the given row
      */
     public Cell[] getCellsRow(int row) {
 
@@ -62,9 +91,9 @@ public class Grid {
     }
 
     /**
-     * This method is used to get every button of a given column
+     * This method is used to get every cell of a given column
      * @param col The column to return
-     * @return Every button of the given column
+     * @return Every cell of the given column
      */
     public Cell[] getCellsCol(int col) {
 
@@ -83,7 +112,7 @@ public class Grid {
     public void resetBoard() {
         for (int i = 0; i < NB_ROW; i++) {
             for (int j = 0; j < NB_COL; j++) {
-                cells[i][j].setJoueur("");
+                cells[i][j].setLetter("");
             }
         }
 
@@ -94,19 +123,20 @@ public class Grid {
     @Override
     public String toString() {
 
-        String res = "";
+        StringBuilder res = new StringBuilder();
 
         for(int i = 0; i < this.NB_ROW; i++) {
             for(int j = 0; j < this.NB_COL; j++) {
 
-                res += this.cells[i][j].toString();
+                res.append(this.cells[i][j].toString());
 
             }
 
-            res += "\n";
+            res.append("\n");
 
         }
 
-        return res;
+        return res.toString();
     }
+
 }

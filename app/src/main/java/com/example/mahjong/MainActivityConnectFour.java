@@ -7,6 +7,8 @@ import Core.ConnectFour;
 
 /**
  * This class represent a view for a Connect four game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public class MainActivityConnectFour extends MainActivityBoardGame {
 

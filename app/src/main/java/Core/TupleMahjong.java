@@ -2,6 +2,9 @@ package Core;
 
 import androidx.annotation.NonNull;
 
+/**
+ * @deprecated
+ */
 public class TupleMahjong /*implements Comparable<TupleMahjong> */ {
 
     TileType type;

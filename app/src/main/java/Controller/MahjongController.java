@@ -12,6 +12,12 @@ import Core.Cell;
 import Core.MahjongGame;
 import Core.Tile;
 
+
+/**
+ * This class represent a controller for a mahjong game
+ * @author Mano Brabant
+ * @version 1.0
+ */
 public class MahjongController {
 
 
@@ -27,6 +33,10 @@ public class MahjongController {
     }
 
     public void clickHand(int num) {
+
+        if(this.mahjongGame.ended()) {
+            return;
+        }
 
         this.mahjongGame.getPlayer1Hand().discard(num);
         this.mahjongGame.getPlayer1Hand().draw();
@@ -55,7 +65,7 @@ public class MahjongController {
 
 
     /**
-     *
+     * This method is used after the player click on a tile to check for the win et make the IA play
      */
     public void update() {
 

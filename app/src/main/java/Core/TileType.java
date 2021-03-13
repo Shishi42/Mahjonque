@@ -1,5 +1,12 @@
 package Core;
 
+import androidx.annotation.NonNull;
+
+/**
+ * This enum enumerate the different possible type for the tiles in a mahjong game
+ * @author Mano Brabant
+ * @version 1.0
+ */
 public enum TileType {
 
     CHARACTER("man", 0),
@@ -8,19 +15,25 @@ public enum TileType {
     WIND("wind", 3),
     DRAGON("dragon", 4);
 
-    private int num;
-    private String name;
+    private final int num;
+    private final String name;
 
-    private TileType(String name, int num) {
+    TileType(String name, int num) {
 
         this.name = name;
         this.num = num;
     }
 
+
+    /**
+     * This method return the number of the type
+     * @return The number
+     */
     public int getNum() {
         return this.num;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return this.name;

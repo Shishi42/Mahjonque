@@ -6,6 +6,9 @@ import android.view.SurfaceView;
 
 import CoreUI.GameUI;
 
+/**
+ * @deprecated
+ */
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private GameThread gameThread;

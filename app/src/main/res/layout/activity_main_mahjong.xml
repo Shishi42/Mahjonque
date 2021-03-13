@@ -32,6 +32,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -42,6 +43,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -52,6 +54,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -62,6 +65,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -69,9 +73,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -79,9 +84,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -92,6 +98,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -102,6 +109,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -112,6 +120,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -122,6 +131,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -132,6 +142,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -142,6 +153,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -152,6 +164,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
                 <ImageView
@@ -162,6 +175,7 @@
                     android:maxWidth="80dp"
                     android:maxHeight="80dp"
                     android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
                     app:srcCompat="@drawable/dragon0" />
 
 
@@ -172,52 +186,52 @@
     </TableRow>
 
 
-    <TableRow>
 
-        <RelativeLayout
-            android:layout_gravity="center">
+    <RelativeLayout
+        android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/text_view_p1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:textAlignment="center"
-                android:freezesText="true"
-                android:text="@string/player1"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/text_view_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignStart="@id/button_reset"
+            android:textAlignment="center"
+            android:freezesText="true"
+            android:text="@string/player1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
 
-            <Button
-                android:id="@+id/button_reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/reset" />
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/reset" />
 
-            <Button
-                android:id="@+id/button_retry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/button_reset"
-                android:text="@string/retry" />
+        <Button
+            android:id="@+id/button_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/button_reset"
+            android:text="@string/retry" />
 
-            <TextView
-                android:id="@+id/text_view_p2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:textAlignment="center"
-                android:freezesText="true"
-                android:text="@string/player2"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/text_view_p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@id/button_reset"
+            android:textAlignment="center"
+            android:freezesText="true"
+            android:text="@string/player2"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </TableRow>
 
 
     <TableRow
@@ -233,7 +247,7 @@
         android:layout_gravity="center">
 
         <TableRow>
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_0"
                 android:layout_width="wrap_content"
@@ -242,8 +256,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_1"
                 android:layout_width="wrap_content"
@@ -252,8 +267,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_2"
                 android:layout_width="wrap_content"
@@ -262,8 +278,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_3"
                 android:layout_width="wrap_content"
@@ -272,8 +289,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_4"
                 android:layout_width="wrap_content"
@@ -282,8 +300,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_5"
                 android:layout_width="wrap_content"
@@ -292,8 +311,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_6"
                 android:layout_width="wrap_content"
@@ -302,6 +322,7 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
 
             <ImageView
@@ -312,8 +333,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_8"
                 android:layout_width="wrap_content"
@@ -322,8 +344,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_9"
                 android:layout_width="wrap_content"
@@ -332,8 +355,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_10"
                 android:layout_width="wrap_content"
@@ -342,8 +366,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_11"
                 android:layout_width="wrap_content"
@@ -352,8 +377,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_12"
                 android:layout_width="wrap_content"
@@ -362,8 +388,9 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
-    
+
             <ImageView
                 android:id="@+id/imageCard_p1_13"
                 android:layout_width="wrap_content"
@@ -372,6 +399,7 @@
                 android:maxWidth="80dp"
                 android:maxHeight="80dp"
                 android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
                 app:srcCompat="@drawable/dragon0" />
 
         </TableRow>

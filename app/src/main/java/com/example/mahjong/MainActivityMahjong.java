@@ -1,51 +1,48 @@
 package com.example.mahjong;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 import Controller.MahjongController;
 import Core.MahjongGame;
 import Core.Tile;
-import Core.TileNum;
 
 
 /**
- * This class represent an abstract view for a mahjong game
+ * This class represent a view for a mahjong game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public class MainActivityMahjong extends AppCompatActivity implements View.OnClickListener  {
 
     private MahjongGame mahjongGame;
     private MahjongController mahjongController;
 
-    protected TextView textViewPlayer1;
-    protected TextView textViewPlayer2;
+    private TextView textViewPlayer1;
+    private TextView textViewPlayer2;
 
-    protected ImageView[] imagesPlayer1;
-    protected ImageView[] imagesPlayer2;
+    private ImageView[] imagesPlayer1;
+    private ImageView[] imagesPlayer2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_mahjong);
-/*
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
-*/
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         this.mahjongGame = new MahjongGame();
         this.mahjongController = new MahjongController(this.mahjongGame, this);
@@ -74,33 +71,25 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
 
 
         Button buttonReset = findViewById(R.id.button_reset);
-        buttonReset.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                clickReset();
-            }
-        });
+        buttonReset.setOnClickListener(v -> clickReset());
 
         Button buttonRetry = findViewById(R.id.button_retry);
-        buttonRetry.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                clickRetry();
-            }
-        });
-
+        buttonRetry.setOnClickListener(v -> clickRetry());
 
         this.update();
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void onClick(View v) {
@@ -111,6 +100,9 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
     }
 
 
+    /**
+     * This method reset the game
+     */
     private void clickReset() {
 
         this.mahjongController.clickReset();
@@ -118,6 +110,10 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
 
     }
 
+
+    /**
+     * This method restart a new game
+     */
     private void clickRetry() {
 
         this.mahjongController.clickRetry();
@@ -140,6 +136,7 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
      * This method update the view.
      * It take the info needed in the model to update the view
      */
+    @SuppressLint("SetTextI18n")
     public void update() {
 
         for (int i = 0; i < this.mahjongGame.getPlayer1Hand().getSize(); i++) {
@@ -151,24 +148,20 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
             imagesPlayer2[i].setImageBitmap(this.getBitmapTile(this.mahjongGame.getPlayer2Hand().getTile(i)));
         }
 
-        this.textViewPlayer1.setText(getString(R.string.player1) + " : " + String.valueOf(this.mahjongGame.getPlayer1Points()));
-        this.textViewPlayer2.setText(String.valueOf(this.mahjongGame.getPlayer2Points()) + " : " + getString(R.string.player2));
+        this.textViewPlayer1.setText(getString(R.string.player1) + " : " + this.mahjongGame.getPlayer1Points());
+        this.textViewPlayer2.setText(this.mahjongGame.getPlayer2Points() + " : " + getString(R.string.player2));
 
     }
 
 
     public Bitmap getBitmapTile(Tile tile) {
 
-        String test = "" + tile.getType() + tile.getHauteur().getNum();
-
+        String test = "" + tile.getType() + tile.getHeight().getNum();
         int resID = getResources().getIdentifier(test, "drawable", getPackageName());
 
-        Bitmap ret = BitmapFactory.decodeResource(getResources(), resID);
-
-        return ret;
+        return BitmapFactory.decodeResource(getResources(), resID);
 
     }
-
 
 
     /**
