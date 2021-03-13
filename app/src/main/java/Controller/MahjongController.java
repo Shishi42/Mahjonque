@@ -35,8 +35,27 @@ public class MahjongController {
     }
 
 
+
     /**
-     * TODO::Reset game on win
+     * This method is used to reset the game
+     */
+    public void clickReset() {
+        this.mahjongGame.reset();
+    }
+
+
+    /**
+     * This method is used to restart a game
+     */
+    public void clickRetry() {
+        this.mahjongGame.retry();
+    }
+
+
+
+
+    /**
+     *
      */
     public void update() {
 
@@ -52,6 +71,7 @@ public class MahjongController {
             this.mahjongGame.draw();
             this.view.draw();
 
+
         } else {
 
             this.mahjongGame.getPlayer2Hand().discard(this.getPlay());
@@ -62,12 +82,10 @@ public class MahjongController {
                 this.mahjongGame.player2Wins();
                 this.view.player2Wins();
 
-                if (this.mahjongGame.getLibrary().size() == 0) {
+            } else if (this.mahjongGame.getLibrary().size() == 0) {
 
-                    this.mahjongGame.draw();
-                    this.view.draw();
-
-                }
+                this.mahjongGame.draw();
+                this.view.draw();
 
             }
 

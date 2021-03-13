@@ -1,8 +1,11 @@
 package Core;
 
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class Tile implements Comparable<Tile> {
@@ -12,6 +15,33 @@ public class Tile implements Comparable<Tile> {
     private TileType type;
     private TileNum hauteur;
     private int num;
+
+    public static Set<Tile> getTiles() {
+
+        if(tiles.size() == 0) {
+
+            for (TileType type : TileType.values()) {
+                for (TileNum num : TileNum.values()) {
+                    tiles.add(new Tile(type, num, 0));
+                    tiles.add(new Tile(type, num, 1));
+                    tiles.add(new Tile(type, num, 2));
+                    tiles.add(new Tile(type, num, 3));
+                }
+            }
+
+
+            tiles = tiles.stream().
+                    filter(t -> !(t.getType() == TileType.WIND && t.getHauteur().getNum() > 3)).
+                    filter(t -> !(t.getType() == TileType.DRAGON && t.getHauteur().getNum() > 2)).
+                    collect(Collectors.toSet());
+
+
+        }
+
+
+        return tiles;
+
+    }
 
     public static Tile getTile(TileType type, TileNum hauteur) {
 
@@ -52,6 +82,15 @@ public class Tile implements Comparable<Tile> {
 
     }
 
+
+    private Tile(TileType type, TileNum hauteur, int num) {
+
+        this.type = type;
+        this.hauteur = hauteur;
+        this.num = num;
+
+    }
+
     private Tile(TileType type, TileNum hauteur) {
 
         this.type = type;
@@ -79,13 +118,15 @@ public class Tile implements Comparable<Tile> {
     @Override
     public int compareTo(Tile tile) {
 
-        int ret = 0;
-        ret = this.getType().compareTo(tile.getType());
+        int ret = this.getType().compareTo(tile.getType());
         if(ret == 0) ret = this.getHauteur().compareTo(tile.getHauteur());
-      //  if(ret == 0) ret = this.getNum() - tile.getNum();
 
         return ret;
 
+    }
+
+    public int getPos() {
+        return this.getType().getNum() * 100 + this.getHauteur().getNum();
     }
 
     @Override

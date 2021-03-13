@@ -2,11 +2,11 @@ package Core;
 
 import androidx.annotation.NonNull;
 
-public class TupleMahjong implements Comparable<TupleMahjong>  {
+public class TupleMahjong /*implements Comparable<TupleMahjong> */ {
 
     TileType type;
     TileNum num;
-
+/*
     public TupleMahjong(TileType type, TileNum num) {
 
         this.type = type;
@@ -21,14 +21,14 @@ public class TupleMahjong implements Comparable<TupleMahjong>  {
     public TileNum getHauteur() {
         return this.num;
     }
-
+*/
     @NonNull
     @Override
     public String toString() {
         return this.type + " : " + this.num;
     }
 
-
+/*
     @Override
     public int compareTo(TupleMahjong tile) {
 
@@ -38,5 +38,5 @@ public class TupleMahjong implements Comparable<TupleMahjong>  {
 
         return ret;
 
-    }
+    }*/
 }

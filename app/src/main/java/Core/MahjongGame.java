@@ -23,35 +23,36 @@ public class MahjongGame {
         this.library = new LinkedList<>();
         this.discard = new LinkedList<>();
 
-        this.initLibrary();
-
         this.player1 = new TileHand(this);
         this.player2 = new TileHand(this);
 
-        this.player1.initHand();
-        this.player2.initHand();
+        this.reset();
+
+    }
+
+    public void initLibrary() {
+
+        this.library.addAll(Tile.getTiles());
+
+        Collections.shuffle(this.library);
+
+    }
+
+    public void reset() {
+
+        this.retry();
 
         this.player1Points = 0;
         this.player2Points = 0;
 
     }
 
-    public void initLibrary() {
+    public void retry() {
 
-        for(TileType type : TileType.values()) {
-            for(TileNum num : TileNum.values()) {
-                for(int i = 0; i< 4; i++) {
-                    this.library.add(Tile.getTile(type, num));
-                }
-            }
-        }
+        this.initLibrary();
 
-        this.library = this.library.stream().
-                filter(t -> !(t.getType() == TileType.WIND && t.getHauteur().getNum() > 3)).
-                filter(t -> !(t.getType() == TileType.DRAGON && t.getHauteur().getNum() > 2)).
-                collect(Collectors.toList());
-
-        Collections.shuffle(this.library);
+        this.player1.initHand();
+        this.player2.initHand();
 
     }
 
@@ -151,7 +152,7 @@ public class MahjongGame {
             hand = this.getPlayer2Hand();
         }
 
-        return hand.containsThreeOfAKind() || hand.containsRow();
+        return hand.containsThreeOfAKind() + hand.containsRow() >= 3;
 
     }
 

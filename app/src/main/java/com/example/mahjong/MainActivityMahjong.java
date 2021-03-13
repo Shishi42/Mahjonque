@@ -4,11 +4,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import Controller.MahjongController;
@@ -17,6 +21,9 @@ import Core.Tile;
 import Core.TileNum;
 
 
+/**
+ * This class represent an abstract view for a mahjong game
+ */
 public class MainActivityMahjong extends AppCompatActivity implements View.OnClickListener  {
 
     private MahjongGame mahjongGame;
@@ -33,6 +40,12 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_mahjong);
+/*
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.mahjongGame = new MahjongGame();
         this.mahjongController = new MahjongController(this.mahjongGame, this);
@@ -59,8 +72,34 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
             imagesPlayer2[i].setOnClickListener(this);
         }
 
+
+        Button buttonReset = findViewById(R.id.button_reset);
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                clickReset();
+            }
+        });
+
+        Button buttonRetry = findViewById(R.id.button_retry);
+        buttonRetry.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                clickRetry();
+            }
+        });
+
+
         this.update();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -72,10 +111,25 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
     }
 
 
+    private void clickReset() {
+
+        this.mahjongController.clickReset();
+        this.update();
+
+    }
+
+    private void clickRetry() {
+
+        this.mahjongController.clickRetry();
+        this.update();
+
+    }
+
+
     /**
-     * This method return the number of a given Button
-     * @param id Le id of the button
-     * @return The number of the button
+     * This method return the number of a given ImageView
+     * @param id Le id of the ImageView
+     * @return The number of the ImageView
      */
     public int getNum(int id) {
         return Integer.parseInt(getResources().getResourceEntryName(id).split("_")[2]);
@@ -94,18 +148,18 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
 
 
         for (int i = 0; i < this.mahjongGame.getPlayer2Hand().getSize(); i++) {
-        //    imagesPlayer2[i].setImageBitmap(this.getBitmapTile(this.mahjongGame.getPlayer2Hand().getTile(i)));
+            imagesPlayer2[i].setImageBitmap(this.getBitmapTile(this.mahjongGame.getPlayer2Hand().getTile(i)));
         }
 
         this.textViewPlayer1.setText(getString(R.string.player1) + " : " + String.valueOf(this.mahjongGame.getPlayer1Points()));
-        this.textViewPlayer2.setText(getString(R.string.player2) + " : " + String.valueOf(this.mahjongGame.getPlayer2Points()));
+        this.textViewPlayer2.setText(String.valueOf(this.mahjongGame.getPlayer2Points()) + " : " + getString(R.string.player2));
 
     }
 
 
     public Bitmap getBitmapTile(Tile tile) {
 
-        String test = "tile_" + tile.getType() + "_" + tile.getHauteur();
+        String test = "" + tile.getType() + tile.getHauteur().getNum();
 
         int resID = getResources().getIdentifier(test, "drawable", getPackageName());
 
