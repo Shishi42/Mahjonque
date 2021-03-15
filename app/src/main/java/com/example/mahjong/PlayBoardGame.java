@@ -9,6 +9,9 @@ import android.view.WindowManager;
 
 import AndroidUI.GameSurface;
 
+/**
+ * @deprecated
+ */
 public class PlayBoardGame extends AppCompatActivity {
 
     @Override

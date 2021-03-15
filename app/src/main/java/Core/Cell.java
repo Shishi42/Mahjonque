@@ -2,6 +2,7 @@ package Core;
 
 import androidx.annotation.NonNull;
 
+
 /**
  * This class represent a cell of a board game
  * @author Mano Brabant
@@ -9,34 +10,38 @@ import androidx.annotation.NonNull;
  */
 public class Cell {
 
-    private String letter;
+    private BoardPlayer player;
+
 
     /**
      * This constructor create a new Cell
      */
     public Cell() {
-        this.letter = "";
+        this.player = BoardPlayer.NONE;
     }
+
 
     /**
      * This method return the letter inside the cell
      * @return The letter that represent a player
      */
-    public String getLetter() {
-        return this.letter;
+    public BoardPlayer getPlayer() {
+        return this.player;
     }
+
 
     /**
      * This method is used to set the letter inside the cell
-     * @param letter The new letter for the cell
+     * @param player The new letter for the cell
      */
-    public void setLetter(String letter) {
-        this.letter = letter;
+    public void setPlayer(BoardPlayer player) {
+        this.player = player;
     }
+
 
     @NonNull
     @Override
     public String toString() {
-        return this.getLetter();
+        return this.getPlayer().toString();
     }
 }

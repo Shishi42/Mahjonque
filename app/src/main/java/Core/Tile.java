@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+
 /**
  * This class represent a tile of the mahjong game
  * @author Mano Brabant

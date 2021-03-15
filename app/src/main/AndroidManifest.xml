@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mahjong">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -11,10 +12,23 @@
         android:screenOrientation="landscape"
         android:theme="@style/Theme.Mahjong">
 
-        <activity android:name=".MainActivityConnectFour"></activity>
-        <activity android:name=".MainActivityTicTacToe"></activity>
-        <activity android:name=".MainActivityMahjong"
-            android:screenOrientation="landscape">
+        <activity
+            android:name=".MainActivityConnectFour"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivityTicTacToe"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivityMahjong"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivityOptions"
+            android:screenOrientation="landscape"
+            tools:ignore="DuplicateActivity" />
+
+        <activity android:name=".MainActivityMenu"
+            android:screenOrientation="landscape"
+            tools:ignore="DuplicateActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

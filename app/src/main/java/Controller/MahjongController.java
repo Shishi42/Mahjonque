@@ -1,16 +1,10 @@
 package Controller;
 
-import com.example.mahjong.MainActivityBoardGame;
 import com.example.mahjong.MainActivityMahjong;
-import com.example.mahjong.R;
 
-import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Random;
 
-import Core.Cell;
 import Core.MahjongGame;
-import Core.Tile;
 
 
 /**

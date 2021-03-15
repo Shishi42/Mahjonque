@@ -27,12 +27,13 @@ import Core.Tile;
  */
 public class MainActivityMahjong extends AppCompatActivity implements View.OnClickListener  {
 
+    //Model & Controller
     private MahjongGame mahjongGame;
     private MahjongController mahjongController;
 
+    //Elements of the view
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-
     private ImageView[] imagesPlayer1;
     private ImageView[] imagesPlayer2;
 
@@ -154,6 +155,11 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
     }
 
 
+    /**
+     * This method return the Bitmap of a given Tile
+     * @param tile The tile we want to show with a Bitmap
+     * @return The Bitmap of the tile
+     */
     public Bitmap getBitmapTile(Tile tile) {
 
         String test = "" + tile.getType() + tile.getHeight().getNum();

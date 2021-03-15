@@ -13,24 +13,37 @@ import java.util.LinkedList;
  */
 public class Group<T> {
 
-  private List<T> liste;
-  private int taille;
+  private List<T> list;
+  private int size;
 
-  public Group(int taille) {
+  /**
+   * This constructor create a new Group
+   * @param size The maximal size of the group
+   */
+  public Group(int size) {
 
-    this.liste = new LinkedList<T>();
-    this.taille = taille;
+    this.list = new LinkedList<>();
+    this.size = size;
 
   }
 
+  /**
+   * This method add an element to the group if the group is not full
+   * @param element The element to add
+   */
   public void add(T element) {
-    if(this.liste.size() < this.taille) {
-      this.liste.add(element);
+    if(this.list.size() < this.size) {
+      this.list.add(element);
     }
   }
 
+
+  /**
+   * This method is used to remove an element from the group
+   * @param element The element to remove
+   */
   public void remove(T element) {
-    this.liste.remove(element);
+    this.list.remove(element);
   }
 
 
@@ -39,7 +52,7 @@ public class Group<T> {
    * @return The elements of the group.
    */
   public List<T> getElements() {
-    return this.liste;
+    return this.list;
   }
 
   /**
@@ -48,34 +61,36 @@ public class Group<T> {
    * @return The element at the given position.
    */
   public T getElement(int position) {
-    return this.liste.get(position);
+    return this.list.get(position);
   }
 
 
-
+  /**
+   * This method return the position in the group of a given element
+   * @param element The element to find in the group
+   * @return The position of the element
+   */
   public int getPosition(T element) {
-    return this.liste.indexOf(element);
+    return this.list.indexOf(element);
   }
 
   /**
-   * Cette méthode permet de modifier les elements dans le groupe
    * This method is used to swap elements inside the group
    * @param element The new element to put.
    * @param position The position of the new element.
    */
   public void swapElement(T element, int position) throws IllegalArgumentException {
 
-    if(position < 0 && position >= this.taille) {
-      throw new IllegalArgumentException("Groupe.changeElement() : " + position);
+    if(position < 0 && position >= this.size) {
+      throw new IllegalArgumentException("Group.swapElement() : " + position);
     }
 
-    if(this.liste.contains(element)) {                                        //If the element is already here
-      this.liste.set(this.liste.indexOf(element), this.liste.get(position));  //We swap places
+    if(this.list.contains(element)) {                                       //If the element is already here
+      this.list.set(this.list.indexOf(element), this.list.get(position));   //We swap places
     }
 
-    this.liste.set(position, element);
+    this.list.set(position, element);
 
   }
-
 
 }

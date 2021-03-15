@@ -3,7 +3,7 @@ package Controller;
 import com.example.mahjong.MainActivityBoardGame;
 
 import Core.BoardGame;
-
+import Core.BoardPlayer;
 
 
 /**
@@ -24,9 +24,9 @@ public class TicTacToeController extends GameController {
             return;
         }
 
-        if(this.boardGame.getGrid().getCell(row, col).getLetter().equals("")) {
+        if(this.boardGame.getGrid().getCell(row, col).getPlayer().equals(BoardPlayer.NONE)) {
 
-            this.boardGame.getGrid().getCell(row, col).setLetter("X");
+            this.boardGame.getGrid().getCell(row, col).setPlayer(BoardPlayer.PLAYER_ONE);
             this.update();
 
         }

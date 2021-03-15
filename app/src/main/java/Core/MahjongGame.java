@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+
 /**
  * This class represent a model for a mahjong game
  * @author Mano Brabant

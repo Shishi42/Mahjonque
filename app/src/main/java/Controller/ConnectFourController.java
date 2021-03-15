@@ -7,8 +7,10 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Random;
 
+import Core.BoardPlayer;
 import Core.Cell;
 import Core.BoardGame;
+
 
 /**
  * This class represent a controller for Connect four game
@@ -38,7 +40,7 @@ public class ConnectFourController extends GameController {
         Optional<Cell> cell = getLastCell(col);
 
         if(cell.isPresent()) {
-            cell.get().setLetter("X");
+            cell.get().setPlayer(BoardPlayer.PLAYER_ONE);
             this.update();
         }
 
@@ -52,7 +54,7 @@ public class ConnectFourController extends GameController {
      */
     public Optional<Cell> getLastCell(int col) {
         return Arrays.stream(this.boardGame.getGrid().getCellsCol(col)).
-                                    filter(c -> c.getLetter().equals("")).
+                                    filter(c -> c.getPlayer().equals(BoardPlayer.NONE)).
                                     reduce((first, second) -> second);
     }
 

@@ -6,6 +6,10 @@ import android.graphics.Canvas;
 import java.util.LinkedList;
 import java.util.List;
 
+
+/**
+ * @deprecated
+ */
 public abstract class Panel {
 
     private List<Panel> panels;

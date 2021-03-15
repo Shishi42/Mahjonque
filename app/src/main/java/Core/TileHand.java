@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+
 /**
  * This class represent a hand for a player in a mahjong game
  * @author Mano Brabant

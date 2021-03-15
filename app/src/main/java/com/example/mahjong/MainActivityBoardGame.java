@@ -2,6 +2,7 @@ package com.example.mahjong;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,8 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 import Controller.GameController;
 import Core.BoardGame;
+import Core.BoardPlayer;
+
 
 /**
  * This class represent an abstract view for a board game
@@ -19,17 +24,20 @@ import Core.BoardGame;
  */
 public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
 
+    //Model & Controller
     protected BoardGame boardGame;
     protected GameController controller;
 
+    //Elements of the view
     protected Button[][] buttons;
-
     protected TextView textViewPlayer1;
     protected TextView textViewPlayer2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
@@ -57,6 +65,16 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     /**
      * This method return the row of a given Button
      * @param id Le id of the button
@@ -76,6 +94,7 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
         return Integer.parseInt(getResources().getResourceEntryName(id).split("_")[1].substring(1,2));
     }
 
+
     /**
      * This method reset the game
      */
@@ -85,6 +104,7 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
         this.update();
 
     }
+
 
     /**
      * This method restart a new game
@@ -105,6 +125,7 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
 
     }
 
+
     /**
      * This method update the view.
      * It take the info needed in the model to update the view
@@ -114,7 +135,11 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
 
         for (int i = 0; i < this.boardGame.getGrid().getNbRow(); i++) {
             for (int j = 0; j < this.boardGame.getGrid().getNbCol(); j++) {
-                buttons[i][j].setText(this.boardGame.getGrid().getCell(i, j).getLetter());
+                if(this.boardGame.getGrid().getCell(i, j).getPlayer().equals(BoardPlayer.NONE)) {
+                    buttons[i][j].setText("");
+                } else {
+                    buttons[i][j].setText(this.boardGame.getGrid().getCell(i, j).getPlayer().toString());
+                }
             }
         }
 

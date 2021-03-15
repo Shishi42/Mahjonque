@@ -12,13 +12,13 @@ public interface Observable {
 	 * This method is used to add an observer to the notification list.
 	 * @param observer The observer to add
 	 */
-	public void addObservateur(Observer observer);
+	public void addObserver(Observer observer);
 
 	/**
 	 * This method is used to remove an observer from the notification list.
 	 * @param observer The observer to remove
 	 */
-	public void removeObservateur(Observer observer);
+	public void removeObserver(Observer observer);
 
 	/**
 	 * This method is used to notify the observers from the notification list.

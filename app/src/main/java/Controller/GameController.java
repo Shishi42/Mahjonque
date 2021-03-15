@@ -5,8 +5,10 @@ import com.example.mahjong.MainActivityBoardGame;
 import java.util.List;
 import java.util.Random;
 
+import Core.BoardPlayer;
 import Core.Cell;
 import Core.BoardGame;
+
 
 /**
  * This class represent an abstract controller for a board game
@@ -38,7 +40,7 @@ public abstract class GameController {
      */
     public void clickGrid(int row, int col) {
 
-        this.boardGame.getGrid().getCell(row, col).setLetter("X");
+        this.boardGame.getGrid().getCell(row, col).setPlayer(BoardPlayer.PLAYER_ONE);
         this.update();
 
     }
@@ -67,7 +69,7 @@ public abstract class GameController {
 
         this.view.update();
 
-        if(this.boardGame.checkForWin('X')) {
+        if(this.boardGame.checkForWin(BoardPlayer.PLAYER_ONE)) {
 
             this.boardGame.player1Wins();
             this.view.player1Wins();
@@ -78,9 +80,9 @@ public abstract class GameController {
 
             if(cells.size() > 0) {
 
-                this.getPlay().setLetter("O");
+                this.getPlay().setPlayer(BoardPlayer.PLAYER_TWO);
 
-                if(this.boardGame.checkForWin('O')) {
+                if(this.boardGame.checkForWin(BoardPlayer.PLAYER_TWO)) {
 
                     this.boardGame.player2Wins();
                     this.view.player2Wins();

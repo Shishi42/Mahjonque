@@ -2,6 +2,7 @@ package Core;
 
 import androidx.annotation.NonNull;
 
+
 /**
  * This enum enumerate the different possible type for the tiles in a mahjong game
  * @author Mano Brabant

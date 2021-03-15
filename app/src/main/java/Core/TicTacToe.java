@@ -1,7 +1,7 @@
 package Core;
 
-import java.util.Arrays;
 import java.util.stream.Collectors;
+
 
 /**
  * This class represent a model for a tic-tac-toe game
@@ -19,19 +19,10 @@ public class TicTacToe extends BoardGame {
 
 
     @Override
-    public boolean checkForWin(char car) {
+    public boolean checkForWin(BoardPlayer car) {
 
-        boolean ret = false;
-
-        for(int i = 0; i < this.grid.getNbCol(); i++) {
-            ret = ret || this.repeatingMoreThan(Arrays.stream(this.grid.getCellsCol(i)).map(Cell::getLetter).collect(Collectors.joining()), car, 2);
-        }
-
-        for(int i = 0; i < this.grid.getNbRow(); i++) {
-            ret = ret || this.repeatingMoreThan(Arrays.stream(this.grid.getCellsRow(i)).map(Cell::getLetter).collect(Collectors.joining()), car, 2);
-        }
-
-        return ret;
+        return this.getAllLines().stream()
+                .anyMatch(line -> this.repeatingMoreThan(line.stream().map(Cell::getPlayer).map(BoardPlayer::toString).collect(Collectors.joining()), car.toChar(), 2));
 
     }
 

@@ -2,6 +2,7 @@ package Core;
 
 import androidx.annotation.NonNull;
 
+
 /**
  * This class represent a grid for that can be used for a board game
  * @author Mano Brabant
@@ -112,7 +113,7 @@ public class Grid {
     public void resetBoard() {
         for (int i = 0; i < NB_ROW; i++) {
             for (int j = 0; j < NB_COL; j++) {
-                cells[i][j].setLetter("");
+                cells[i][j].setPlayer(BoardPlayer.NONE);
             }
         }
 

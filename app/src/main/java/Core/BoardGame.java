@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 /**
  * This class represent an abstract model for a board game
  * @author Mano Brabant
@@ -41,7 +42,7 @@ public abstract class BoardGame {
 
         return Arrays.stream(this.grid.getCells()).
                 flatMap(Arrays::stream).
-                filter(b -> b.getLetter().equals("")).
+                filter(b -> b.getPlayer().equals(BoardPlayer.NONE)).
                 collect(Collectors.toList());
 
     }
@@ -115,7 +116,47 @@ public abstract class BoardGame {
      * @return true if one of the players have wined, false otherwise
      */
     public boolean ended() {
-        return this.checkForWin('X') || this.checkForWin('O');
+        return this.checkForWin(BoardPlayer.PLAYER_ONE) || this.checkForWin(BoardPlayer.PLAYER_TWO);
+    }
+
+
+    /**
+     * This method all lines (column, row, diagonal) of the grid
+     * TODO::Return the diagonals
+     * @return The list of the available column numbers
+     */
+    public List<List<Cell>> getAllLines() {
+
+        List<List<Cell>> ret = new LinkedList<>();
+
+        for(int j = 0; j < this.grid.getNbCol(); j++) {
+
+            List<Cell> temp = new LinkedList<>();
+
+            for(int i = 0; i < this.grid.getNbRow(); i++) {
+                temp.add(this.grid.getCell(i, j));
+            }
+
+            ret.add(temp);
+
+        }
+
+
+        for(int i = 0; i < this.grid.getNbRow(); i++) {
+
+            List<Cell> temp = new LinkedList<>();
+
+            for(int j = 0; j < this.grid.getNbCol(); j++) {
+                temp.add(this.grid.getCell(i, j));
+            }
+
+            ret.add(temp);
+
+        }
+
+
+        return ret;
+
     }
 
 
@@ -128,7 +169,7 @@ public abstract class BoardGame {
         List<Integer> ret = new LinkedList<>();
 
         for(int j = 0; j < this.grid.getNbCol(); j++) {
-            if(this.grid.getCell(0, j).getLetter().equals("")) {
+            if(this.grid.getCell(0, j).getPlayer().equals(BoardPlayer.NONE)) {
                 ret.add(j);
             }
         }
@@ -172,10 +213,10 @@ public abstract class BoardGame {
 
     /**
      * This method return if a given player has wined
-     * @param car The character representing the player
+     * @param car The BoardPlayer
      * @return true if the player has wined, false otherwise
      */
-    public abstract boolean checkForWin(char car);
+    public abstract boolean checkForWin(BoardPlayer car);
 
 
 }

@@ -44,4 +44,6 @@
     <string name="retry">Retry</string>
 	<string name="descriptionImage">Image Hand</string>
     <string name="drawCard">Draw</string>
+
+    <string name="launch">Launch App</string>
 </resources>
