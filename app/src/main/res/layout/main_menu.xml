@@ -29,7 +29,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="@null"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton
@@ -52,7 +52,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="@null"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton
@@ -75,7 +75,7 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="@null"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton
@@ -102,7 +102,7 @@
     <LinearLayout
         android:id="@+id/easter_egg_container"
         android:layout_width="@dimen/button_width"
-        android:layout_height="@null"
+        android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -112,7 +112,7 @@
 
         <View
         android:layout_width="fill_parent"
-        android:layout_height="@null"
+        android:layout_height="wrap_content"
         android:layout_weight="1"/>
 
         <TextView
@@ -125,7 +125,7 @@
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="@null"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton
@@ -148,7 +148,7 @@
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="@null"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton

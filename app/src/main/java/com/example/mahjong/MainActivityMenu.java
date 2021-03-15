@@ -3,7 +3,6 @@ package com.example.mahjong;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,16 +35,16 @@ public class MainActivityMenu extends AppCompatActivity {
         @SuppressLint("WrongViewCast") ImageButton launchMahjong = findViewById(R.id.button_play);
         launchMahjong.setOnClickListener(v -> startActivity(mahjong));
 
-        Button launchTicTacToe = findViewById(R.id.button_tictactoe);
+        @SuppressLint("WrongViewCast") ImageButton launchTicTacToe = findViewById(R.id.button_tictactoe);
         launchTicTacToe.setOnClickListener(v -> startActivity(ticTacToe));
 
-        Button launchConnectFour = findViewById(R.id.button_connect_four);
+        @SuppressLint("WrongViewCast") ImageButton launchConnectFour = findViewById(R.id.button_connect_four);
         launchConnectFour.setOnClickListener(v -> startActivity(connectFour));
 
-        Button option = findViewById(R.id.button_options);
+        @SuppressLint("WrongViewCast") ImageButton option = findViewById(R.id.button_options);
         option.setOnClickListener(v -> startActivity(options));
 
-        Button quit = findViewById(R.id.button_quit);
+        @SuppressLint("WrongViewCast") ImageButton quit = findViewById(R.id.button_quit);
         quit.setOnClickListener(v -> this.finish());
 
     }
