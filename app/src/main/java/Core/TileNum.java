@@ -1,5 +1,12 @@
 package Core;
 
+import androidx.annotation.NonNull;
+
+/**
+ * This enum enumerate the different possible height for the tiles in a mahjong game
+ * @author Mano Brabant
+ * @version 1.0
+ */
 public enum TileNum {
 
     ONE("one", 0),
@@ -12,20 +19,25 @@ public enum TileNum {
     EIGHT("eight", 7),
     NINE("nine", 8);
 
-    private String name;
-    private int num;
+    private final String name;
+    private final int num;
 
-    private TileNum(String name, int num) {
+    TileNum(String name, int num) {
 
         this.name = name;
         this.num = num;
 
     }
 
+    /**
+     * This method return the number of the height
+     * @return The number
+     */
     public int getNum() {
         return this.num;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return this.name;

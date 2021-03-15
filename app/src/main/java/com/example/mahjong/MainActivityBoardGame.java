@@ -1,5 +1,6 @@
 package com.example.mahjong;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import Core.BoardGame;
 
 /**
  * This class represent an abstract view for a board game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,18 +47,10 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
 
 
         Button buttonReset = findViewById(R.id.button_reset);
-        buttonReset.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                clickReset();
-            }
-        });
+        buttonReset.setOnClickListener(v -> clickReset());
 
         Button buttonRetry = findViewById(R.id.button_retry);
-        buttonRetry.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                clickRetry();
-            }
-        });
+        buttonRetry.setOnClickListener(v -> clickRetry());
 
         this.update();
 
@@ -81,6 +76,9 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
         return Integer.parseInt(getResources().getResourceEntryName(id).split("_")[1].substring(1,2));
     }
 
+    /**
+     * This method reset the game
+     */
     private void clickReset() {
 
         this.controller.clickReset();
@@ -88,6 +86,9 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
 
     }
 
+    /**
+     * This method restart a new game
+     */
     private void clickRetry() {
 
         this.controller.clickRetry();
@@ -108,18 +109,17 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
      * This method update the view.
      * It take the info needed in the model to update the view
      */
+    @SuppressLint("SetTextI18n")
     public void update() {
-
-        System.out.println("update");
 
         for (int i = 0; i < this.boardGame.getGrid().getNbRow(); i++) {
             for (int j = 0; j < this.boardGame.getGrid().getNbCol(); j++) {
-                buttons[i][j].setText(this.boardGame.getGrid().getCase(i, j).getJoueur());
+                buttons[i][j].setText(this.boardGame.getGrid().getCell(i, j).getLetter());
             }
         }
 
-        this.textViewPlayer1.setText(getString(R.string.player1) + " : " + String.valueOf(this.boardGame.getPlayer1Points()));
-        this.textViewPlayer2.setText(getString(R.string.player2) + " : " + String.valueOf(this.boardGame.getPlayer2Points()));
+        this.textViewPlayer1.setText(getString(R.string.player1) + " : " + this.boardGame.getPlayer1Points());
+        this.textViewPlayer2.setText(getString(R.string.player2) + " : " + this.boardGame.getPlayer2Points());
 
     }
 

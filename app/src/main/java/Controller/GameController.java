@@ -3,7 +3,6 @@ package Controller;
 import com.example.mahjong.MainActivityBoardGame;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Random;
 
 import Core.Cell;
@@ -11,6 +10,8 @@ import Core.BoardGame;
 
 /**
  * This class represent an abstract controller for a board game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public abstract class GameController {
 
@@ -37,7 +38,7 @@ public abstract class GameController {
      */
     public void clickGrid(int row, int col) {
 
-        this.boardGame.getGrid().getCase(row, col).setJoueur("X");
+        this.boardGame.getGrid().getCell(row, col).setLetter("X");
         this.update();
 
     }
@@ -61,11 +62,8 @@ public abstract class GameController {
 
     /**
      * This method is used after the player click on a cell to check for the win et make the IA play
-     * TODO::Make it look nicer
      */
     public void update() {
-
-        boolean reset = false;
 
         this.view.update();
 
@@ -80,14 +78,7 @@ public abstract class GameController {
 
             if(cells.size() > 0) {
 
-                try {
-                    this.getPlay().setJoueur("O");
-                } catch (NoSuchElementException e) {
-
-                    this.boardGame.draw();
-                    this.view.draw();
-
-                }
+                this.getPlay().setLetter("O");
 
                 if(this.boardGame.checkForWin('O')) {
 

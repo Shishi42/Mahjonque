@@ -3,13 +3,15 @@ package CoreUI;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 
 import com.example.mahjong.R;
 
 import Core.Tile;
 import Utils.Panel;
 
+/**
+ * @deprecated
+ */
 public class TileUI extends Panel {
 
     private final int WIDTH;
@@ -55,7 +57,7 @@ public class TileUI extends Panel {
     public Bitmap getBitmap() {
 
         int row = this.tile.getType().getNum();
-        int col = this.tile.getHauteur().getNum();
+        int col = this.tile.getHeight().getNum();
         Bitmap subImage = Bitmap.createBitmap(this.image, col* width, row* height , width, height);
 
         return subImage;

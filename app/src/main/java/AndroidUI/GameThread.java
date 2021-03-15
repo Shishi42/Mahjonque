@@ -3,6 +3,9 @@ package AndroidUI;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
+/**
+ * @deprecated
+ */
 public class GameThread extends Thread {
 
     private boolean running;

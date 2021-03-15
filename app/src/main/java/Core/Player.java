@@ -1,5 +1,8 @@
 package Core;
 
+/**
+ * @deprecated
+ */
 public class Player {
 
     private BoardGame boardGame;

@@ -7,6 +7,9 @@ import Core.BoardGame;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
+/**
+ * @deprecated
+ */
 public class TestBoardGame {
     @Test
     public void initPioche_is_correct() {

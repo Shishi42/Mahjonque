@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 /**
  * This class represent an abstract model for a board game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public abstract class BoardGame {
 
@@ -39,7 +41,7 @@ public abstract class BoardGame {
 
         return Arrays.stream(this.grid.getCells()).
                 flatMap(Arrays::stream).
-                filter(b -> b.getJoueur() == "").
+                filter(b -> b.getLetter().equals("")).
                 collect(Collectors.toList());
 
     }
@@ -123,10 +125,10 @@ public abstract class BoardGame {
      */
     public List<Integer> getColumnAvailable() {
 
-        List<Integer> ret = new LinkedList<Integer>();
+        List<Integer> ret = new LinkedList<>();
 
         for(int j = 0; j < this.grid.getNbCol(); j++) {
-            if(this.grid.getCase(0, j).getJoueur() == "") {
+            if(this.grid.getCell(0, j).getLetter().equals("")) {
                 ret.add(j);
             }
         }
@@ -168,6 +170,11 @@ public abstract class BoardGame {
     }
 
 
+    /**
+     * This method return if a given player has wined
+     * @param car The character representing the player
+     * @return true if the player has wined, false otherwise
+     */
     public abstract boolean checkForWin(char car);
 
 

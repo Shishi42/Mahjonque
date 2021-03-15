@@ -1,10 +1,12 @@
 package CoreUI;
 
-        import com.example.mahjong.MainActivityBoardGame;
+import com.example.mahjong.MainActivityBoardGame;
 
-        import Core.BoardGame;
+import Core.BoardGame;
 
-
+/**
+ * @deprecated
+ */
 public class GameUI {
 
 

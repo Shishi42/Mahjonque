@@ -1,369 +1,412 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="*"
+    android:shrinkColumns="*"
+    android:measureWithLargestChild="true"
+    android:layout_gravity="bottom"
     android:background="@drawable/background"
     tools:context="com.example.mahjong.MainActivityMahjong">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+
+    <TableRow
+        android:layout_weight="1">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:shrinkColumns="*"
+            android:layout_gravity="center">
+
+            <TableRow>
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+                <ImageView
+                    android:id="@+id/imageCard_p2_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="80dp"
+                    android:maxHeight="80dp"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/descriptionImage"
+                    app:srcCompat="@drawable/dragon0" />
+
+
+            </TableRow>
+
+        </TableLayout>
+
+    </TableRow>
+
+
+
+    <RelativeLayout
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/text_view_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignStart="@id/button_reset"
+            android:textAlignment="center"
+            android:freezesText="true"
+            android:text="@string/player1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/button_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/button_reset"
+            android:text="@string/retry" />
+
+        <TextView
+            android:id="@+id/text_view_p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@id/button_reset"
+            android:textAlignment="center"
+            android:freezesText="true"
+            android:text="@string/player2"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+    <TableRow
+        android:layout_weight="1"
+        android:layout_gravity="center">
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="top"
-        android:orientation="horizontal">
+        android:stretchColumns="*"
+        android:shrinkColumns="*"
+        android:layout_gravity="center">
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageCard_p1_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+            <ImageView
+                android:id="@+id/imageCard_p1_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="80dp"
+                android:maxHeight="80dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/descriptionImage"
+                app:srcCompat="@drawable/dragon0" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    </TableRow>
 
 
-        <ImageView
-            android:id="@+id/imageCard_p2_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-
-        <ImageView
-            android:id="@+id/imageCard_p2_7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p2_13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-
-
-
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/text_view_p1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:freezesText="true"
-        android:text="@string/player1"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/text_view_p2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:freezesText="true"
-        android:text="@string/player2"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp" />
-
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal">
-
-
-        <ImageView
-            android:id="@+id/imageCard_p1_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-
-        <ImageView
-            android:id="@+id/imageCard_p1_7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-        <ImageView
-            android:id="@+id/imageCard_p1_13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/back_tile" />
-
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</TableLayout>

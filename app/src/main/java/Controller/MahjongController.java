@@ -12,6 +12,12 @@ import Core.Cell;
 import Core.MahjongGame;
 import Core.Tile;
 
+
+/**
+ * This class represent a controller for a mahjong game
+ * @author Mano Brabant
+ * @version 1.0
+ */
 public class MahjongController {
 
 
@@ -28,6 +34,10 @@ public class MahjongController {
 
     public void clickHand(int num) {
 
+        if(this.mahjongGame.ended()) {
+            return;
+        }
+
         this.mahjongGame.getPlayer1Hand().discard(num);
         this.mahjongGame.getPlayer1Hand().draw();
         this.update();
@@ -35,8 +45,27 @@ public class MahjongController {
     }
 
 
+
     /**
-     * TODO::Reset game on win
+     * This method is used to reset the game
+     */
+    public void clickReset() {
+        this.mahjongGame.reset();
+    }
+
+
+    /**
+     * This method is used to restart a game
+     */
+    public void clickRetry() {
+        this.mahjongGame.retry();
+    }
+
+
+
+
+    /**
+     * This method is used after the player click on a tile to check for the win et make the IA play
      */
     public void update() {
 
@@ -52,6 +81,7 @@ public class MahjongController {
             this.mahjongGame.draw();
             this.view.draw();
 
+
         } else {
 
             this.mahjongGame.getPlayer2Hand().discard(this.getPlay());
@@ -62,12 +92,10 @@ public class MahjongController {
                 this.mahjongGame.player2Wins();
                 this.view.player2Wins();
 
-                if (this.mahjongGame.getLibrary().size() == 0) {
+            } else if (this.mahjongGame.getLibrary().size() == 0) {
 
-                    this.mahjongGame.draw();
-                    this.view.draw();
-
-                }
+                this.mahjongGame.draw();
+                this.view.draw();
 
             }
 

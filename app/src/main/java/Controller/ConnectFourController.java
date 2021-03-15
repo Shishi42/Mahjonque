@@ -12,6 +12,8 @@ import Core.BoardGame;
 
 /**
  * This class represent a controller for Connect four game
+ * @author Mano Brabant
+ * @version 1.0
  */
 public class ConnectFourController extends GameController {
 
@@ -36,7 +38,7 @@ public class ConnectFourController extends GameController {
         Optional<Cell> cell = getLastCell(col);
 
         if(cell.isPresent()) {
-            cell.get().setJoueur("X");
+            cell.get().setLetter("X");
             this.update();
         }
 
@@ -50,7 +52,7 @@ public class ConnectFourController extends GameController {
      */
     public Optional<Cell> getLastCell(int col) {
         return Arrays.stream(this.boardGame.getGrid().getCellsCol(col)).
-                                    filter(c -> c.getJoueur() == "").
+                                    filter(c -> c.getLetter().equals("")).
                                     reduce((first, second) -> second);
     }
 

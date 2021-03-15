@@ -4,6 +4,10 @@ import android.graphics.Bitmap;
 
 import Utils.Panel;
 
+
+/**
+ * @deprecated
+ */
 public class PlayerUI extends Panel {
     @Override
     public Bitmap getBitmap() {
