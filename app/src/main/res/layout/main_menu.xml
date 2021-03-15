@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:id="@+id/sub_container"
-        android:layout_width="@dimen/button_width"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@id/logo"
@@ -51,14 +51,14 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="@dimen/button_margin">
             <ImageButton
                 android:id="@+id/button_options"
                 android:contentDescription="@string/button_options_desc"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/button_resized"
                 android:scaleType="fitXY"
