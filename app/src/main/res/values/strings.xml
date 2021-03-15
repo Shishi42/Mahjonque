@@ -17,14 +17,23 @@
 
     <string name="background_image">Background image</string>
     <string name="logo_image">Logo image</string>
-	 <string name="game_name">Mahjong</string>
-    <string name="button_play">Play</string>
-    <string name="button_options">Options</string>
-    <string name="button_quit">Quit</string>
+    <string name="game_name">Mahjong</string>
+    <string name="button_play">PLAY</string>
+    <string name="button_play_desc">play button</string>
+    <string name="button_options">OPTIONS</string>
+    <string name="button_options_desc">options button</string>
+    <string name="button_quit">QUIT</string>
+    <string name="button_quit_desc">quit button</string>
+
+    <string name="button_connect_four">CONNECT FOUR</string>
+    <string name="button_connect_four_desc">connect four button</string>
+    <string name="button_tictactoe">TICTACTOE</string>
+    <string name="button_tictactoe_desc">tictactoe button</string>
+
     <string name="button_confirm">Confirm</string>
     <string name="button_back">Back</string>
-    <string name="button_connect_four">Connect Four</string>
-    <string name="button_tictactoe">TicTacToe</string>
+
+    <string name="text_games">Other Games</string>
 
     <string name="text_length">Game Length :</string>
     <string name="text_thinking">Thinking Time :</string>
