@@ -35,8 +35,8 @@
 
     <string name="text_games">Other Games</string>
 
-    <string name="text_length">Game Length :</string>
-    <string name="text_thinking">Thinking Time :</string>
+    <string name="text_length">GAME LENGTH</string>
+    <string name="text_thinking">THINKING TIME</string>
 
     <string name="hint_length">(default : 8)</string>
     <string name="hint_thinking">(default : 30)</string>
@@ -55,4 +55,6 @@
     <string name="drawCard">Draw</string>
 
     <string name="launch">Launch App</string>
+    <string name="button_confirm_desc">confirm button</string>
+    <string name="button_back_desc">back button</string>
 </resources>
