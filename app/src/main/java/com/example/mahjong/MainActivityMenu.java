@@ -4,9 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,74 +42,59 @@ public class MainActivityMenu extends AppCompatActivity {
         scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
         scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
-        @SuppressLint("WrongViewCast") ImageButton buttonMahjong = findViewById(R.id.button_play);
-        buttonMahjong.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonMahjong.startAnimation(scaleUp);
-                }else if(event.getAction()==MotionEvent.ACTION_UP){
-                    buttonMahjong.startAnimation(scaleDown);
-                }
+        @SuppressLint("WrongViewCast") Button buttonMahjong = findViewById(R.id.button_play);
+        buttonMahjong.setOnTouchListener((v, event) -> {
+            if(event.getAction()==MotionEvent.ACTION_DOWN){
+                buttonMahjong.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonMahjong.startAnimation(scaleDown);
                 startActivity(mahjong);
-                return true;
             }
+            return true;
         });
 
-        @SuppressLint("WrongViewCast") ImageButton buttonTictactoe = findViewById(R.id.button_tictactoe);
-        buttonTictactoe.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonTictactoe.startAnimation(scaleUp);
-                }else if(event.getAction()==MotionEvent.ACTION_UP){
-                    buttonTictactoe.startAnimation(scaleDown);
-                }
+        @SuppressLint("WrongViewCast") Button buttonTictactoe = findViewById(R.id.button_tictactoe);
+        buttonTictactoe.setOnTouchListener((v, event) -> {
+            if(event.getAction()==MotionEvent.ACTION_DOWN){
+                buttonTictactoe.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonTictactoe.startAnimation(scaleDown);
                 startActivity(ticTacToe);
-                return true;
             }
+            return true;
         });
 
-        @SuppressLint("WrongViewCast") ImageButton buttonConnectFour = findViewById(R.id.button_connect_four);
-        buttonConnectFour.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonConnectFour.startAnimation(scaleUp);
-                }else if(event.getAction()==MotionEvent.ACTION_UP){
-                    buttonConnectFour.startAnimation(scaleDown);
-                }
+        @SuppressLint("WrongViewCast") Button buttonConnectFour = findViewById(R.id.button_connect_four);
+        buttonConnectFour.setOnTouchListener((v, event) -> {
+            if(event.getAction()==MotionEvent.ACTION_DOWN){
+                buttonConnectFour.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonConnectFour.startAnimation(scaleDown);
                 startActivity(connectFour);
-                return true;
             }
+            return true;
         });
         
-        @SuppressLint("WrongViewCast") ImageButton buttonOption = findViewById(R.id.button_options);
-        buttonOption.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonOption.startAnimation(scaleUp);
-                }else if(event.getAction()==MotionEvent.ACTION_UP){
-                    buttonOption.startAnimation(scaleDown);
-                }
+        @SuppressLint("WrongViewCast") Button buttonOption = findViewById(R.id.button_options);
+        buttonOption.setOnTouchListener((v, event) -> {
+            if(event.getAction()==MotionEvent.ACTION_DOWN){
+                buttonOption.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonOption.startAnimation(scaleDown);
                 startActivity(options);
-                return true;
             }
+            return true;
         });
 
-        @SuppressLint("WrongViewCast") ImageButton buttonQuit = findViewById(R.id.button_quit);
-        buttonQuit.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_DOWN){
-                    buttonQuit.startAnimation(scaleUp);
-                }else if(event.getAction()==MotionEvent.ACTION_UP){
-                    buttonQuit.startAnimation(scaleDown);
-                }
+        @SuppressLint("WrongViewCast") Button buttonQuit = findViewById(R.id.button_quit);
+        buttonQuit.setOnTouchListener((v, event) -> {
+            if(event.getAction()==MotionEvent.ACTION_DOWN){
+                buttonQuit.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonQuit.startAnimation(scaleDown);
                 finishAndRemoveTask();
-                return true;
             }
+            return true;
         });
 
     }

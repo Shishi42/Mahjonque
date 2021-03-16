@@ -18,97 +18,76 @@
 
     <LinearLayout
         android:id="@+id/sub_container"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/linear_width"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@id/logo"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/bot_button_margin"
         android:layout_centerHorizontal="true">
 
+        <Button
+            android:id="@+id/button_play"
+            android:contentDescription="@string/button_play_desc"
+            android:background="@drawable/button_shape"
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="@dimen/button_margin">
-            <ImageButton
-                android:id="@+id/button_play"
-                android:contentDescription="@string/button_play_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_resized"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:clickable="false"
-                android:text="@string/button_play"/>
-        </FrameLayout>
-
-        <FrameLayout
             android:layout_width="@dimen/button_width"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:layout_marginTop="@dimen/button_margin">
-            <ImageButton
-                android:id="@+id/button_options"
-                android:contentDescription="@string/button_options_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_resized"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:clickable="false"
-                android:text="@string/button_options"/>
-        </FrameLayout>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:text="@string/button_play"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/top_button_margin"/>
+
+        <Button
+            android:id="@+id/button_options"
+            android:contentDescription="@string/button_options_desc"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:layout_marginTop="@dimen/button_margin">
-            <ImageButton
-                android:id="@+id/button_quit"
-                android:contentDescription="@string/button_quit_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_resized"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:clickable="false"
-                android:text="@string/button_quit"/>
-        </FrameLayout>
 
+            android:text="@string/button_options"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/button_margin"/>
+
+        <Button
+            android:id="@+id/button_quit"
+            android:contentDescription="@string/button_quit_desc"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+
+            android:text="@string/button_quit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/bot_button_margin"
+
+            />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/easter_egg_container"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/linear_width"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_below="@id/logo"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/button_margin"
-        android:layout_marginEnd="@dimen/button_margin"
-        android:orientation="vertical">
+        android:layout_marginBottom="@dimen/bot_button_margin"
+        android:layout_marginEnd="@dimen/bot_button_margin">
 
         <View
         android:layout_width="fill_parent"
@@ -123,51 +102,37 @@
             android:textStyle="bold"
             android:text="@string/text_games"/>
 
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:layout_marginTop="@dimen/button_margin">
-            <ImageButton
-                android:id="@+id/button_connect_four"
-                android:contentDescription="@string/button_connect_four_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_resized"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:clickable="false"
-                android:text="@string/button_connect_four"/>
-        </FrameLayout>
+        <Button
+            android:id="@+id/button_connect_four"
+            android:contentDescription="@string/button_connect_four_desc"
+            android:background="@drawable/button_shape"
 
-        <FrameLayout
-            android:layout_width="fill_parent"
+            android:layout_width="@dimen/button_width"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:layout_marginTop="@dimen/button_margin">
-            <ImageButton
-                android:id="@+id/button_tictactoe"
-                android:contentDescription="@string/button_tictactoe_desc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/button_resized"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:clickable="false"
-                android:text="@string/button_tictactoe"/>
-        </FrameLayout>
+
+            android:text="@string/button_connect_four"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/button_margin"/>
+
+        <Button
+            android:id="@+id/button_tictactoe"
+            android:contentDescription="@string/button_tictactoe_desc"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+
+            android:text="@string/button_tictactoe"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/button_margin"/>
 
     </LinearLayout>
 
