@@ -69,10 +69,9 @@
         android:id="@+id/table"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_toEndOf="@id/blank_view"
-
         android:stretchColumns="*"
-        android:layout_marginEnd="@dimen/side_margin_tictactoe">
+        android:shrinkColumns="*"
+        android:layout_toEndOf="@id/blank_view">
 
         <TableRow
             android:layout_width="fill_parent"
