@@ -5,7 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,10 +22,11 @@ import Controller.MahjongController;
 import Core.MahjongGame;
 import Core.Tile;
 
-
 /**
  * This class represent a view for a mahjong game
  * @author Mano Brabant
+ * @author Benjamin Riviere
+ * @author Monster Hunter Rise - Kamura's Song of Purification (TGA Trailer Edit.)
  * @version 1.0
  */
 public class MainActivityMahjong extends AppCompatActivity implements View.OnClickListener  {
@@ -37,12 +41,12 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
     private ImageView[] imagesPlayer1;
     private ImageView[] imagesPlayer2;
 
-
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_mahjong);
+        setContentView(R.layout.activity_mahjong);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         this.mahjongGame = new MahjongGame();
@@ -71,11 +75,32 @@ public class MainActivityMahjong extends AppCompatActivity implements View.OnCli
         }
 
 
-        Button buttonReset = findViewById(R.id.button_reset);
-        buttonReset.setOnClickListener(v -> clickReset());
+        Animation scaleUp, scaleDown;
 
-        Button buttonRetry = findViewById(R.id.button_retry);
-        buttonRetry.setOnClickListener(v -> clickRetry());
+        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
+
+        @SuppressLint("WrongViewCast") Button buttonReset = findViewById(R.id.button_reset);
+        buttonReset.setOnTouchListener((v, event) -> {
+            if(event.getAction()== MotionEvent.ACTION_DOWN){
+                buttonReset.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonReset.startAnimation(scaleDown);
+                clickReset();
+            }
+            return true;
+        });
+
+        @SuppressLint("WrongViewCast") Button buttonRetry = findViewById(R.id.button_retry);
+        buttonRetry.setOnTouchListener((v, event) -> {
+            if(event.getAction()== MotionEvent.ACTION_DOWN){
+                buttonRetry.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonRetry.startAnimation(scaleDown);
+                clickRetry();
+            }
+            return true;
+        });
 
         this.update();
 

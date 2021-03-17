@@ -7,12 +7,10 @@ import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
-
 
 /**
  * This class represent a view for the main menu
@@ -29,7 +27,7 @@ public class MainActivityMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.main_menu);
+        setContentView(R.layout.activity_menu);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
         Intent mahjong = new Intent(this, MainActivityMahjong.class);
@@ -74,7 +72,7 @@ public class MainActivityMenu extends AppCompatActivity {
             }
             return true;
         });
-        
+
         @SuppressLint("WrongViewCast") Button buttonOption = findViewById(R.id.button_options);
         buttonOption.setOnTouchListener((v, event) -> {
             if(event.getAction()==MotionEvent.ACTION_DOWN){

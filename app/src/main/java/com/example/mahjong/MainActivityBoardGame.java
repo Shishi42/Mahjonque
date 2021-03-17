@@ -3,7 +3,10 @@ package com.example.mahjong;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,10 +19,11 @@ import Controller.GameController;
 import Core.BoardGame;
 import Core.BoardPlayer;
 
-
 /**
  * This class represent an abstract view for a board game
  * @author Mano Brabant
+ * @author Benjamin Riviere
+ * @author Le chat pour le support psychologique
  * @version 1.0
  */
 public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
@@ -34,6 +38,7 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
     protected TextView textViewPlayer2;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +58,32 @@ public abstract class MainActivityBoardGame extends AppCompatActivity implements
             }
         }
 
+        Animation scaleUp, scaleDown;
 
-        Button buttonReset = findViewById(R.id.button_reset);
-        buttonReset.setOnClickListener(v -> clickReset());
+        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
-        Button buttonRetry = findViewById(R.id.button_retry);
-        buttonRetry.setOnClickListener(v -> clickRetry());
+        @SuppressLint("WrongViewCast") Button buttonReset = findViewById(R.id.button_reset);
+        buttonReset.setOnTouchListener((v, event) -> {
+            if(event.getAction()== MotionEvent.ACTION_DOWN){
+                buttonReset.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonReset.startAnimation(scaleDown);
+                clickReset();
+            }
+            return true;
+        });
+
+        @SuppressLint("WrongViewCast") Button buttonRetry = findViewById(R.id.button_retry);
+        buttonRetry.setOnTouchListener((v, event) -> {
+            if(event.getAction()== MotionEvent.ACTION_DOWN){
+                buttonRetry.startAnimation(scaleUp);
+            }else if(event.getAction()==MotionEvent.ACTION_UP){
+                buttonRetry.startAnimation(scaleDown);
+                clickRetry();
+            }
+            return true;
+        });
 
         this.update();
 

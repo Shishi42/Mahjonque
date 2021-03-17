@@ -1,58 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--@Author Mano Brabant-->
+<!--@Author Benjamin Riviere-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.mahjong.MainActivityTicTacToe">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/text_view_p1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:freezesText="true"
+        android:text="@string/player1"
+        android:textSize="@dimen/font_size_games" />
 
-        <TextView
-            android:id="@+id/text_view_p1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:text="@string/player1"
-            android:textSize="30sp" />
+    <TextView
+        android:id="@+id/text_view_p2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_p1"
+        android:freezesText="true"
+        android:text="@string/player2"
+        android:textSize="@dimen/font_size_games" />
 
-        <TextView
-            android:id="@+id/text_view_p2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_view_p1"
-            android:freezesText="true"
-            android:text="@string/player2"
-            android:textSize="30sp" />
+    <View
+        android:id="@+id/blank_view"
+        android:layout_width="@dimen/side_margin_tictactoe"
+        android:layout_height="0dp"
+        android:layout_toEndOf="@id/text_view_p1"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/text_view_p2"
+        android:gravity="center"
+        android:layout_toStartOf="@id/table">
 
         <Button
             android:id="@+id/button_reset"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/text_view_p1"
-            android:text="@string/reset" />
+
+            android:text="@string/button_reset"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_retry"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/text_view_p1"
+
+            android:text="@string/button_retry"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
             android:layout_below="@+id/button_reset"
-            android:text="@string/retry" />
+            android:layout_marginTop="@dimen/layout_margin"/>
 
     </RelativeLayout>
 
-
     <TableLayout
-        android:layout_width="fill_parent"
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:stretchColumns="*">
+        android:layout_toEndOf="@id/blank_view"
 
+        android:stretchColumns="*"
+        android:layout_marginEnd="@dimen/side_margin_tictactoe">
 
         <TableRow
             android:layout_width="fill_parent"
@@ -64,27 +84,27 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#000000"
+                android:background="@color/case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_01"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#101010"
+                android:background="@color/sub_case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_02"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#000000"
+                android:background="@color/case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
         </TableRow>
 
@@ -98,27 +118,27 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#101010"
+                android:background="@color/sub_case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_11"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#000000"
+                android:background="@color/case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_12"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#101010"
+                android:background="@color/sub_case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
         </TableRow>
 
@@ -132,30 +152,30 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#000000"
+                android:background="@color/case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_21"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#101010"
+                android:background="@color/sub_case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
             <Button
                 android:id="@+id/button_22"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 style="?android:attr/buttonBarButtonStyle"
-                android:background="#000000"
+                android:background="@color/case_games"
                 android:freezesText="true"
-                android:textSize="30sp" />
+                android:textSize="@dimen/font_size_games" />
 
         </TableRow>
 
     </TableLayout>
 
-</LinearLayout>
+</RelativeLayout>

@@ -16,7 +16,7 @@ public class MainActivityTicTacToe extends MainActivityBoardGame {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setContentView(R.layout.activity_main_tic_tac_toe);
+        setContentView(R.layout.activity_tictactoe);
 
         this.boardGame = new TicTacToe();
         this.controller = new TicTacToeController(this.boardGame, this);

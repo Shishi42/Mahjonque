@@ -2,7 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="main">#FFF0A023</color>
     <color name="main_variant">#FFFFE400</color>
     <color name="background">#FF191919</color>
+
+    <color name="case_games">#FF000000</color>
+    <color name="sub_case_games">#FF101010</color>
 </resources>

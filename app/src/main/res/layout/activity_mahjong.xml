@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--@Author Mano Brabant-->
+<!--@Author Benjamin Riviere-->
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +12,6 @@
     android:layout_gravity="bottom"
     android:background="@drawable/background"
     tools:context="com.example.mahjong.MainActivityMahjong">
-
 
     <TableRow
         android:layout_weight="1">
@@ -185,8 +186,6 @@
 
     </TableRow>
 
-
-
     <RelativeLayout
         android:layout_gravity="center">
 
@@ -195,49 +194,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignStart="@id/button_reset"
-            android:textAlignment="center"
+
+            android:layout_centerVertical="true"
+
             android:freezesText="true"
             android:text="@string/player1"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_mahjong" />
 
         <Button
             android:id="@+id/button_reset"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/reset" />
+            android:layout_marginTop="@dimen/linear_top_button_margin"
+
+            android:text="@string/button_reset"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button_retry"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_shape"
+
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/linear_bot_button_margin"
+
+            android:text="@string/button_retry"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+
             android:layout_below="@+id/button_reset"
-            android:text="@string/retry" />
+            android:layout_marginTop="@dimen/between_button_margin"/>
 
         <TextView
             android:id="@+id/text_view_p2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignEnd="@id/button_reset"
-            android:textAlignment="center"
+
+            android:layout_centerVertical="true"
+
             android:freezesText="true"
             android:text="@string/player2"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_mahjong" />
 
     </RelativeLayout>
-
-
 
     <TableRow
         android:layout_weight="1"
         android:layout_gravity="center">
-
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -407,6 +418,5 @@
     </TableLayout>
 
     </TableRow>
-
 
 </TableLayout>

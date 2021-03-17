@@ -28,7 +28,7 @@ public class MainActivityOptions extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.play_options);
+        setContentView(R.layout.activity_options);
 
         Animation scaleUp, scaleDown;
 
