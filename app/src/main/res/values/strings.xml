@@ -2,20 +2,20 @@
     <string name="blank"> </string>
 
     <string name="app_name">Mahjong</string>
-    <string name="bambou">Bamboo</string>
-    <string name="feu">Character</string>
-    <string name="piece">Circle</string>
+    <string name="bamboo">Bamboo</string>
+    <string name="character">Character</string>
+    <string name="circle">Circle</string>
     <string name="dragon">Dragon</string>
-    <string name="vent">Wind</string>
-    <string name="un">One</string>
-    <string name="deux">Two</string>
-    <string name="trois">Three</string>
-    <string name="quatre">Four</string>
-    <string name="cinq">Five</string>
+    <string name="wind">Wind</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
     <string name="six">Six</string>
-    <string name="sept">Seven</string>
-    <string name="huit">Eight</string>
-    <string name="neuf">Nine</string>
+    <string name="seven">Seven</string>
+    <string name="eight">Eight</string>
+    <string name="nine">Nine</string>
 
     <string name="background_image">Background image</string>
     <string name="logo_image">Logo image</string>
