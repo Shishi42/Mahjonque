@@ -5,6 +5,7 @@ import android.os.Bundle;
 import Controller.ConnectFourController;
 import Core.ConnectFour;
 
+
 /**
  * This class represent a view for a Connect four game
  * @author Mano Brabant

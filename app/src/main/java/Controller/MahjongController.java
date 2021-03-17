@@ -19,6 +19,11 @@ public class MahjongController {
     protected MainActivityMahjong view;
 
 
+    /**
+     * This constructor create a new Controller for a given Mahjong game
+     * @param mahjongGame The Mahjong game to control
+     * @param view The view in which the game will be shown
+     */
     public MahjongController(MahjongGame mahjongGame, MainActivityMahjong view) {
 
         this.mahjongGame = mahjongGame;
@@ -26,6 +31,11 @@ public class MahjongController {
 
     }
 
+
+    /**
+     * This method is used when the player click on one tile of his hand
+     * @param num The number of the tile that was clicked
+     */
     public void clickHand(int num) {
 
         if(this.mahjongGame.ended()) {
