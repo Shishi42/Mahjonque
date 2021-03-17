@@ -70,7 +70,7 @@
             android:textStyle="bold"
 
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/linear_bot_button_margin"
+            android:layout_marginTop="@dimen/between_button_margin"
 
             />
 

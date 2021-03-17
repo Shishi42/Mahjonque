@@ -69,8 +69,8 @@
         android:id="@+id/table"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:stretchColumns="*"
         android:shrinkColumns="*"
+
         android:layout_toEndOf="@id/blank_view">
 
         <TableRow
