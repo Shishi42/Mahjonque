@@ -7,7 +7,7 @@ import Core.ConnectFour;
 
 
 /**
- * This class represent a view for a Connect four game
+ * This class represent a activity for a Connect four game
  * @author Mano Brabant
  * @version 1.0
  */

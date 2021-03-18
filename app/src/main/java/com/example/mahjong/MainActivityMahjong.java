@@ -23,10 +23,9 @@ import Core.MahjongGame;
 import Core.Tile;
 
 /**
- * This class represent a view for a mahjong game
+ * This class represent a activity for a mahjong game
  * @author Mano Brabant
  * @author Benjamin Riviere
- * @author Monster Hunter Rise - Kamura's Song of Purification (TGA Trailer Edit.)
  * @version 1.0
  */
 public class MainActivityMahjong extends AppCompatActivity implements View.OnClickListener  {

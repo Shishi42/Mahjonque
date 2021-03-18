@@ -7,7 +7,7 @@ import Core.TicTacToe;
 
 
 /**
- * This class represent a view for a Tic Tac Toe game
+ * This class represent a activity for a Tic Tac Toe game
  * @author Mano Brabant
  * @version 1.0
  */

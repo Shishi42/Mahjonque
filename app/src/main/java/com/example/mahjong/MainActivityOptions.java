@@ -15,10 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 /**
- * This class represent a view for the options menu
+ * This class represent a activity for the options menu
  * @author Mano Brabant
  * @author Benjamin Riviere
- * @author Le mec sur youtube qui a fait le tuto
  * @version 1.0
  */
 public class MainActivityOptions extends AppCompatActivity {

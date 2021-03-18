@@ -13,10 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 /**
- * This class represent a view for the main menu
+ * This class represent a activity for the main menu
  * @author Mano Brabant
  * @author Benjamin Riviere
- * @author La Passion de l'Infographie
  * @version 1.0
  */
 public class MainActivityMenu extends AppCompatActivity {

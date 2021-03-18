@@ -20,10 +20,9 @@ import Core.BoardGame;
 import Core.BoardPlayer;
 
 /**
- * This class represent an abstract view for a board game
+ * This class represent an abstract activity for a board game
  * @author Mano Brabant
  * @author Benjamin Riviere
- * @author Le chat pour le support psychologique
  * @version 1.0
  */
 public abstract class MainActivityBoardGame extends AppCompatActivity implements View.OnClickListener {
