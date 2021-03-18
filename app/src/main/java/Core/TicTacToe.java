@@ -21,6 +21,11 @@ public class TicTacToe extends BoardGame {
     @Override
     public boolean checkForWin(BoardPlayer car) {
 
+
+
+        this.getAllLines()
+                .forEach(line -> System.out.println(line.stream().map(Cell::getPlayer).map(BoardPlayer::toString).collect(Collectors.joining())));
+
         return this.getAllLines().stream()
                 .anyMatch(line -> this.repeatingMoreThan(line.stream().map(Cell::getPlayer).map(BoardPlayer::toString).collect(Collectors.joining()), car.toChar(), 2));
 

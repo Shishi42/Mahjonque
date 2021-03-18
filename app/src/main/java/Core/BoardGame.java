@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 /**
  * This class represent an abstract model for a board game
  * @author Mano Brabant
+ * @author Benjamin Riviere
  * @version 1.0
  */
 public abstract class BoardGame {
@@ -122,7 +123,6 @@ public abstract class BoardGame {
 
     /**
      * This method all lines (column, row, diagonal) of the grid
-     * TODO::Return the diagonals
      * @return The list of the available column numbers
      */
     public List<List<Cell>> getAllLines() {
@@ -155,8 +155,33 @@ public abstract class BoardGame {
         }
 
 
-        return ret;
+        for(int k = -this.grid.getNbRow()+1; k < this.grid.getNbRow(); k++) {
+            List<Cell> temp = new LinkedList<>();
+            for (int i = 0; i < this.grid.getNbRow(); i++) {
 
+                for (int j = 0; j < this.grid.getNbCol(); j++) {
+                    if (i == (j - k)) {
+                        temp.add(this.grid.getCell(i, j));
+                    }
+                }
+                ret.add(temp);
+            }
+        }
+
+        for(int k = -this.grid.getNbRow()+1; k < this.grid.getNbRow(); k++) {
+            List<Cell> temp = new LinkedList<>();
+            for (int i = 0; i < this.grid.getNbRow(); i++) {
+
+                for (int j = 0; j < this.grid.getNbCol(); j++) {
+                    if (this.grid.getNbRow() - i == (j - k)) {
+                        temp.add(this.grid.getCell(i, j));
+                    }
+                }
+                ret.add(temp);
+            }
+        }
+
+        return ret;
     }
 
 
@@ -191,6 +216,10 @@ public abstract class BoardGame {
         int n = str.length();
         int maxCount = 0;
         int cur_count = 0;
+
+        System.out.println("c'est dl'a bite");
+        System.out.println(str);
+        System.out.println("\n");
 
         for (int i = 0; i < n; i++)
         {
