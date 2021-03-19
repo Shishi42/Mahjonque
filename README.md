@@ -1,2 +1,2 @@
-# Mahjong
-Android Mahjong
+# Mahjonque
+Mahjong game on Android
